@@ -1,8 +1,17 @@
-Android app for a group to exchange situational awareness messages containing text, pictures and GPS locations. 
+# RadioMSG
 
-Also provides bi-directional messages exchanges with SMS cellular and email recipients over radio. Now includes "secured" IOT data reads and commands from/to Home Assistant.
+Android app for group situational awareness messaging over radio. Supports text, pictures, and GPS locations, with bi-directional bridging to SMS and email recipients. Includes secured IoT data reads and commands via Home Assistant. Compatible with the Java Pskmail server for PCs.
 
-To install, download the .apk file in the Releases section into a device then use a file manager to install. 
-May require that "Install unknown apps" be selected in the Security section of the device. Refer to the Quick Start Guide in the Download section for more detailed information. 
+## Install
 
-Compatible with Java Pskmail server for PCs (RadioMsg tab).
+Download the APK from the Releases section and install via a file manager. You may need to enable "Install unknown apps" in device Security settings. See the Quick Start Guide in the Downloads section for details.
+
+## Build
+
+Requires JDK 21 and Android SDK with `ANDROID_HOME` set.
+
+```bash
+./gradlew assembleDebug
+```
+
+APK output: `RadioMSG/build/outputs/apk/debug/RadioMSG-debug.apk`
