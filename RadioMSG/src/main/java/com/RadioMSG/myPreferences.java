@@ -1,15 +1,15 @@
 /*
- * Preferences.java  
- *   
- * Copyright (C) 2011 John Douyere (VK2ETA)  
- *   
- * This program is distributed in the hope that it will be useful,  
- * but WITHOUT ANY WARRANTY; without even the implied warranty of  
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  
- * GNU General Public License for more details.  
- *   
- * You should have received a copy of the GNU General Public License  
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+ * Preferences.java
+ *
+ * Copyright (C) 2011 John Douyere (VK2ETA)
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package com.RadioMSG;
@@ -25,16 +25,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceScreen;
 
-public class myPreferences extends AppCompatActivity {
+public class myPreferences extends AppCompatActivity
+        implements PreferenceFragmentCompat.OnPreferenceStartScreenCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(android.R.id.content, new PrefsFragment())
+                    .commit();
+        }
+    }
+
+    @Override
+    public boolean onPreferenceStartScreen(PreferenceFragmentCompat caller, PreferenceScreen pref) {
+        PrefsFragment fragment = new PrefsFragment();
+        Bundle args = new Bundle();
+        args.putString(PreferenceFragmentCompat.ARG_PREFERENCE_ROOT, pref.getKey());
+        fragment.setArguments(args);
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(android.R.id.content, new PrefsFragment())
+                .replace(android.R.id.content, fragment)
+                .addToBackStack(pref.getKey())
                 .commit();
+        return true;
     }
 
     public static class PrefsFragment extends PreferenceFragmentCompat {
