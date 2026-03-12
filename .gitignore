@@ -29,6 +29,8 @@ local.properties
 .DS_Store
 Thumbs.db
 
+.knownPackages
+
 # Logs
 *.log
 
