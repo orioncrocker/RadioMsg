@@ -179,7 +179,6 @@
         android:key="userInterfacePS"
         android:title="USER INTERFACE">
         <PreferenceScreen
-            android:dependency="EXPERTMODE"
             android:key="swipablescreensPS"
             android:title="Swipeable screens (req. restart)">
             <CheckBoxPreference
@@ -239,7 +238,6 @@
             android:title="Allow Single Click on Quick Message" />
         <EditTextPreference
             android:defaultValue="7"
-            android:dependency="EXPERTMODE"
             android:inputType="number"
             android:key="QUICKSMSPADDING"
             android:summary="separation between quick messages lines. Default 7, valid is 1 to 100"
@@ -311,7 +309,6 @@
             </ListPreference>
             <EditTextPreference
                 android:defaultValue="1500"
-                android:dependency="EXPERTMODE"
                 android:inputType="number"
                 android:key="AFREQUENCY"
                 android:summary="Audio Frequency 500 to 2500Hz"
@@ -319,14 +316,12 @@
             </EditTextPreference>
             <EditTextPreference
                 android:defaultValue="0"
-                android:dependency="EXPERTMODE"
                 android:key="PRETONEDURATION"
                 android:summary="In MilliSeconds. 0 = Disabled, Max 10,000"
                 android:title="Transmit Tone Before Data">
             </EditTextPreference>
             <EditTextPreference
                 android:defaultValue="0"
-                android:dependency="EXPERTMODE"
                 android:key="TUNEDURATION"
                 android:summary="0 = Toggle, OR 1 to 60 Seconds"
                 android:title="Tune Button Tone Duration">
@@ -341,19 +336,16 @@
             </ListPreference>
             <CheckBoxPreference
                 android:defaultValue="false"
-                android:dependency="EXPERTMODE"
                 android:key="SLOWCPU"
                 android:summary="Save CPU resources"
                 android:title="SLOW CPU" />
             <CheckBoxPreference
                 android:defaultValue="false"
-                android:dependency="EXPERTMODE"
                 android:key="IDLEMODEMOFF"
                 android:summary="Stop Modem when idle. Sender must have TxRSID ON"
                 android:title="Save Battery" />
             <CheckBoxPreference
                 android:defaultValue="false"
-                android:dependency="EXPERTMODE"
                 android:key="SAMPLEAUDIOASFLOATS"
                 android:summary="** Experimental, may degrade the modem sensitivity **"
                 android:title="Sample in Floating Point format" />
@@ -362,7 +354,6 @@
             android:key="modesspecificsCAT"
             android:title="Modes Specific Settings">
             <PreferenceScreen
-                android:dependency="EXPERTMODE"
                 android:key="rsidPS"
                 android:title="IDs">
                 <CheckBoxPreference
@@ -371,7 +362,6 @@
                     android:title="Searches Passband" />
                 <EditTextPreference
                     android:defaultValue="200"
-                    android:dependency="EXPERTMODE"
                     android:key="RSIDMINBW"
                     android:summary="180 to 1000. Valid when Search Passband is NOT selected"
                     android:title="RSID detection bandwidth in Hz" />
@@ -383,7 +373,6 @@
                     android:title="Allow Errors" />
             </PreferenceScreen>
             <PreferenceScreen
-                android:dependency="EXPERTMODE"
                 android:key="mt63PS"
                 android:title="MT63">
                 <CheckBoxPreference
@@ -450,7 +439,6 @@
             android:title="List of contacts separated by comma"></EditTextPreference>
         <EditTextPreference
             android:defaultValue=""
-            android:dependency="EXPERTMODE"
             android:key="RELAYLIST"
             android:summary="Letters, Numbers or '-+_/@.' only. For access passwords use callsign:relaying password:IOT password. E.g. vk2eta-1:relayPw:IOTpw"
             android:title="List of relay stations separated by comma"></EditTextPreference>

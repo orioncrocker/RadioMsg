@@ -24,6 +24,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 
@@ -60,6 +61,20 @@ public class myPreferences extends AppCompatActivity
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.preferences, rootKey);
+
+            // Programmatically apply expert-mode gating for preferences in sub-screens
+            // where android:dependency cannot cross PreferenceScreen boundaries.
+            boolean expertMode = getPreferenceManager().getSharedPreferences()
+                    .getBoolean("EXPERTMODE", false);
+            String[] expertOnlyKeys = {
+                "AFREQUENCY", "PRETONEDURATION", "TUNEDURATION",
+                "SLOWCPU", "IDLEMODEMOFF", "SAMPLEAUDIOASFLOATS",
+                "rsidPS", "mt63PS", "RELAYLIST"
+            };
+            for (String key : expertOnlyKeys) {
+                Preference pref = findPreference(key);
+                if (pref != null) pref.setEnabled(expertMode);
+            }
 
             // Set HF and UHF mode list entries from the modem's available modes
             String[] frequencyClass = {"HF", "UHF"};
