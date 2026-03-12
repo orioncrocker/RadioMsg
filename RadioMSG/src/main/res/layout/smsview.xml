@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/smsmailscreen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/spinnerlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Spinner
+            android:id="@+id/modes_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:id="@+id/to_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spinnerlayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Spinner
+            android:id="@+id/via_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:spinnerMode="dropdown" />
+
+        <CheckBox
+            android:id="@+id/fullalias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Alias and Details" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/channelandlevellayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:id="@+id/spinnerlayout3A"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Spinner
+                android:id="@+id/channel_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/spinnerlayout3B"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/audio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_gravity="bottom"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:text="Audio "
+                android:textSize="14sp"></TextView>
+
+            <ProgressBar
+                android:id="@+id/audio_level"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:max="100"
+                android:maxHeight="8dp"
+                android:minHeight="8dp"
+                android:progress="0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/FrameLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/minsec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="00:00"
+            android:textSize="20sp"></TextView>
+
+        <Spinner
+            android:id="@+id/minute_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/msglist"
+        android:layout_width="fill_parent"
+        android:layout_height="298dp"
+        android:layout_weight="0.75" />
+
+    <LinearLayout
+        android:id="@+id/FrameLayout5"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.04"
+        android:visibility="gone"
+        android:weightSum="1">
+        <Button
+            android:id="@+id/button_inquire"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Inquire"></Button>
+
+        <Button
+            android:id="@+id/button_timesync"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Time Sync"></Button>
+
+        <Button
+            android:id="@+id/button_scanoff5m"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Scan Off 5 Min."></Button>
+
+        <Button
+            android:id="@+id/button_scanoff15m"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Scan Off 15 Min."></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/FrameLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.04"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/button_sms"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Send Text"></Button>
+
+        <Button
+            android:id="@+id/button_position"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Send Position"></Button>
+
+        <Button
+            android:id="@+id/button_requestposition"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Request Position"></Button>
+
+        <Button
+            android:id="@+id/button_requestresend"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.25"
+            android:text="Message For Me?"></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/FrameLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/edit_text_out"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="5"
+            android:textSize="10pt">
+
+            <requestFocus></requestFocus>
+        </EditText>
+    </LinearLayout>
+
+
+</LinearLayout>

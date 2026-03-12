@@ -1,0 +1,6 @@
+include ':RadioMSG'
+dependencyResolutionManagement{
+    repositories{
+        maven { url "https://jitpack.io" }
+    }
+}

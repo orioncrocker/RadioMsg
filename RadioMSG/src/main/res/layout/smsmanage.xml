@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1"
+    android:id="@+id/managesmsscreen" >
+    <ListView android:layout_width="match_parent"
+        android:id="@+id/msglist" android:layout_height="298dp" android:layout_weight="0.82"/>
+    <LinearLayout android:id="@+id/FrameLayout3" android:layout_width="fill_parent"
+        android:layout_height="50dp" android:layout_weight="0.08" android:weightSum="1">
+        <Button android:id="@+id/button_selectall" android:text="Sel. All" android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+        <Button android:id="@+id/button_selectnone" android:text="Sel. None" android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+        <Button android:id="@+id/button_invertselection" android:text="Invert Sel." android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+        <Button android:id="@+id/button_selectgps" android:text="Sel.GPS Pos" android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/FrameLayout4" android:layout_width="fill_parent"
+        android:layout_height="50dp" android:layout_weight="0.08" android:weightSum="1">
+        <Button android:id="@+id/button_delete" android:text="Delete" android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+        <Button android:id="@+id/button_export" android:text="Export" android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+        <Button android:id="@+id/button_archive" android:text="Archive" android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+        <Button android:id="@+id/button_return" android:text="Return" android:layout_height="match_parent" android:layout_weight="0.25" android:layout_width="fill_parent"></Button>
+    </LinearLayout>
+
+</LinearLayout>

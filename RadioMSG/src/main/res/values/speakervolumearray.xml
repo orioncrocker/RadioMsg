@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+   
+    <string-array name="speakervolume">
+        <item>OFF</item>
+        <item>ON at 0dB</item>
+        <item>ON at +3dB</item>
+        <item>ON at +6dB</item>
+        <item>ON at +9dB</item>
+        <item>ON at +12dB</item>
+    </string-array>
+    
+    <string-array name="speakervolume_values">
+        <item>-99</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    
+</resources>

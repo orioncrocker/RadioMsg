@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+   
+    <string-array name="mail_protocol_list">
+        <item>NONE</item>
+        <item>SSH/TLS</item>
+        <item>STARTTLS</item>
+        </string-array>
+    
+    <string-array name="mail_protocol_values">
+        <item>NONE</item>
+        <item>SSH/TLS</item>
+        <item>STARTTLS</item>
+        </string-array>
+    
+    
+</resources>

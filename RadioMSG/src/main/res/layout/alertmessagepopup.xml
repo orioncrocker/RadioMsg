@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_weight="1.00"
+	android:id="@+id/alertpopupscreen" >
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:background="#bb19007b"
+		android:layout_height="match_parent"
+		android:weightSum="1">
+		<LinearLayout
+			android:id="@+id/FrameLayout2"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.02"
+			android:orientation="horizontal"
+			android:weightSum="1" >
+
+			<Button
+				android:id="@+id/button_dismiss"
+				android:layout_width="match_parent"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="dismiss" >
+			</Button>
+		</LinearLayout>
+		<TextView
+			android:id="@+id/smstext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="25sp" >
+		</TextView>
+		<TextView
+			android:id="@+id/positiontext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="25sp" >
+		</TextView>
+		<TextView
+			android:id="@+id/picturetext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="25sp" >
+		</TextView>
+		<TextView
+			android:id="@+id/fromtext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="25sp" >
+		</TextView>
+		<ImageView
+			android:id="@+id/mmsimage"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:scaleType="fitCenter"
+			android:minHeight="400dip"
+			/>
+
+	</LinearLayout>
+</ScrollView>

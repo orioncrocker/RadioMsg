@@ -1,0 +1,85 @@
+Subject: [PATCH] Intermediate commit
+---
+Index: RadioMSG/src/main/java/com/RadioMSG/RMsgProcessor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/RadioMSG/src/main/java/com/RadioMSG/RMsgProcessor.java b/RadioMSG/src/main/java/com/RadioMSG/RMsgProcessor.java
+--- a/RadioMSG/src/main/java/com/RadioMSG/RMsgProcessor.java	(revision 991b7d781e74a3d01a731239bb3c6556bd59cdae)
++++ b/RadioMSG/src/main/java/com/RadioMSG/RMsgProcessor.java	(revision 3d063aaa8ced51d50411feb4534eed2414500f7e)
+@@ -66,7 +66,7 @@
+ public class RMsgProcessor extends Service {
+ 
+     static String application = "RadioMSG 2.2.0.4";
+-    static String version = "Version 2.2.0.4, 2024-08-04";
++    static String version = "Version 2.2.0.5, 2024-08-04";
+ 
+     static boolean onWindows = true;
+     static String ModemPreamble = "";  // String to send before any Tx Buffer
+Index: RadioMSG/src/main/java/com/RadioMSG/RadioMSG.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/RadioMSG/src/main/java/com/RadioMSG/RadioMSG.java b/RadioMSG/src/main/java/com/RadioMSG/RadioMSG.java
+--- a/RadioMSG/src/main/java/com/RadioMSG/RadioMSG.java	(revision 991b7d781e74a3d01a731239bb3c6556bd59cdae)
++++ b/RadioMSG/src/main/java/com/RadioMSG/RadioMSG.java	(revision 3d063aaa8ced51d50411feb4534eed2414500f7e)
+@@ -2890,12 +2890,17 @@
+ 
+             case R.id.cancelmsg:
+                 if (RMsgProcessor.TXActive) {
+-                    //The same as the Stop Tx button in the Modem Screen
+-                    if (Modem.stopTX != true) {
+-                        middleToastText("Transmission Cancelled");
+-                        RadioMSG.mHandler.post(RadioMSG.updatetitle);
+-                    }
+-                    Modem.stopTX = true;
++                    if (Modem.modemIsTuning && Modem.tune) {
++                        //Stop tuning
++                        Modem.tune = false;
++                    } else {
++                        //The same as the Stop Tx button in the Modem Screen
++                        if (Modem.stopTX != true) {
++                            middleToastText("Transmission Cancelled");
++                            RadioMSG.mHandler.post(RadioMSG.updatetitle);
++                        }
++                        Modem.stopTX = true;
++                    }
+                 } else {
+                     //Un-queue the last message in the FIFO (not the first one to TX)
+                     if (RMsgTxList.getLatest() != null) {
+@@ -2903,7 +2908,6 @@
+                         RadioMSG.mHandler.post(RadioMSG.updatetitle);
+                     }
+                 }
+-
+                 break;
+ 
+             case R.id.prefs:
+@@ -6557,7 +6561,7 @@
+         myButton.setOnClickListener(new OnClickListener() {
+             public void onClick(View v) {
+                 try {
+-                    int tuneLength = config.getPreferenceI("TUNEDURATION", 4);
++                    int tuneLength = config.getPreferenceI("TUNEDURATION", 0);
+ 
+                     if (tuneLength <= 0) {
+                         Modem.tune = !Modem.tune;
+Index: RadioMSG/src/main/res/xml/preferences.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/RadioMSG/src/main/res/xml/preferences.xml b/RadioMSG/src/main/res/xml/preferences.xml
+--- a/RadioMSG/src/main/res/xml/preferences.xml	(revision 991b7d781e74a3d01a731239bb3c6556bd59cdae)
++++ b/RadioMSG/src/main/res/xml/preferences.xml	(revision 3d063aaa8ced51d50411feb4534eed2414500f7e)
+@@ -325,7 +325,7 @@
+                 android:title="Transmit Tone Before Data">
+             </EditTextPreference>
+             <EditTextPreference
+-                android:defaultValue="4"
++                android:defaultValue="0"
+                 android:dependency="EXPERTMODE"
+                 android:key="TUNEDURATION"
+                 android:summary="0 = Toggle, OR 1 to 60 Seconds"

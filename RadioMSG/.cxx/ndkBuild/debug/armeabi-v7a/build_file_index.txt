@@ -1,0 +1,2 @@
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Android.mk
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Application.mk

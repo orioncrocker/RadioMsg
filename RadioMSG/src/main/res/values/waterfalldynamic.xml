@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+   
+    <string-array name="waterfalldynamic">
+        <item>Compressed</item>
+        <item>Normal</item>
+        <item>Expanded L1</item>
+        <item>Expanded L2</item>
+        <item>Expanded L3</item>
+        </string-array>
+    
+    <string-array name="waterfalldynamic_values">
+        <item>4.0</item>
+        <item>1.0</item>
+        <item>0.25</item>
+        <item>0.0625</item>
+        <item>0.0156</item>
+        </string-array>
+    
+    
+</resources>

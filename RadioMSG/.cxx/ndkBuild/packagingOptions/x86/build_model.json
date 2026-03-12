@@ -1,0 +1,133 @@
+{
+  "abi": "X86",
+  "info": {
+    "abi": "X86",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/.cxx/ndkBuild/packagingOptions/x86",
+  "cxxBuildFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/.cxx/ndkBuild/packagingOptions/x86",
+  "abiPlatformVersion": 21,
+  "variant": {
+    "buildSystemArgumentList": [],
+    "cFlagsList": [],
+    "cppFlagsList": [],
+    "variantName": "packagingOptions",
+    "objFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/packagingOptions/obj/local",
+    "soFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/packagingOptions/lib",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/.cxx",
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates",
+      "gradleModulePathName": ":RadioMSG",
+      "moduleRootFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG",
+      "moduleBuildFile": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build.gradle",
+      "makeFile": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Android.mk",
+      "buildSystem": "NDK_BUILD",
+      "ndkFolder": "/home/jdouyere/Android/Sdk/android-ndk-r21e",
+      "ndkVersion": "21.4.7075529",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "SYSTEM",
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 30,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "originalCmakeToolchainFile": "/home/jdouyere/Android/Sdk/android-ndk-r21e/build/cmake/android.toolchain.cmake",
+      "cmakeToolchainFile": "/home/jdouyere/Android/Sdk/android-ndk-r21e/build/cmake/android.toolchain.cmake",
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "/home/jdouyere/Android/Sdk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/home/jdouyere/Android/Sdk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/home/jdouyere/Android/Sdk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/home/jdouyere/Android/Sdk/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket",
+        "cxxFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/.cxx",
+        "compilerSettingsCacheFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/.cxx",
+        "sdkFolder": "/home/jdouyere/Android/Sdk",
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false,
+        "isV2NativeModelEnabled": true
+      },
+      "nativeBuildOutputLevel": "QUIET"
+    },
+    "prefabDirectory": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/.cxx/ndkBuild/packagingOptions/prefab"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/.cxx/ndkBuild/packagingOptions/prefab/x86"
+}

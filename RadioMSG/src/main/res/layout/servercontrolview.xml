@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical"
+android:weightSum="1" >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="0.001"
+        android:id="@+id/spinnerlayout" >
+        <Spinner
+            android:id="@+id/modes_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:spinnerMode="dropdown" />
+        <Spinner
+            android:id="@+id/to_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="0.001"
+        android:id="@+id/spinnerlayout2" >
+        <Spinner
+            android:id="@+id/via_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:spinnerMode="dropdown" />
+        <CheckBox
+            android:id="@+id/fullalias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Alias and Details" />
+    </LinearLayout>
+
+<ScrollView
+    android:id="@+id/terminalscrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.00" >
+
+    <LinearLayout
+        android:id="@+id/FrameLayout5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <TextView
+            android:id="@+id/titlelabel"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:text="Relay/server control"
+            android:textSize="10pt"></TextView>
+
+
+        <LinearLayout
+            android:id="@+id/FrameLayout4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1" >
+
+            <RadioGroup
+                android:id="@+id/actionRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/timesync"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Time Sync" />
+
+                <RadioButton
+                    android:id="@+id/scanoff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan Off" />
+
+                <RadioButton
+                    android:id="@+id/scanon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan On" />
+
+                <RadioButton
+                    android:id="@+id/mute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mute Email/SMS auto Forwarding" />
+
+                <RadioButton
+                    android:id="@+id/unmute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Un-mute Email/SMS auto Forwarding" />
+
+                <RadioButton
+                    android:id="@+id/unlink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unsubscribe from Email/Cellular" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/FrameLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/forsomanylabel"
+                android:layout_width="121dp"
+                android:layout_height="37dp"
+                android:text="For how long:"
+                android:textSize="8pt"></TextView>
+
+            <EditText
+                android:id="@+id/forsomanytext"
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:inputType="number"
+                android:textSize="10pt">
+
+                <requestFocus></requestFocus>
+            </EditText>
+
+            <RadioGroup
+                android:id="@+id/unitsGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/rbminutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Min(s)" />
+
+                <RadioButton
+                    android:id="@+id/rbhours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hour(S)" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/FrameLayout8"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/foraddresslabel"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:text="From Email/Cell No/Alias:"
+                android:textSize="8pt" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/foraddress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:textSize="10pt" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/FrameLayout7"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/forcallsignlabel"
+                android:layout_width="200dp"
+                android:layout_height="37dp"
+                android:text="For Callsign:"
+                android:textSize="8pt" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/forcallsign"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:textSize="10pt" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/FrameLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:weightSum="1" >
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.50"
+                android:text="Cancel" >
+            </Button>
+
+            <Button
+                android:id="@+id/button_sendcommand"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="0.50"
+                android:text="SEND" >
+            </Button>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

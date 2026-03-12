@@ -1,0 +1,17 @@
+{
+  "buildFiles": [
+    "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Android.mk",
+    "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Application.mk"
+  ],
+  "cleanCommands": [
+    "/home/jdouyere/Android/Sdk/ndk-bundle-removed/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Android.mk NDK_APPLICATION_MK\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/debug/lib NDK_DEBUG\u003d1 clean"
+  ],
+  "libraries": {
+    "RadioMSG_Modem_Interface-debug-arm64-v8a": {
+      "artifactName": "RadioMSG_Modem_Interface",
+      "buildCommand": "/home/jdouyere/Android/Sdk/ndk-bundle-removed/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Android.mk NDK_APPLICATION_MK\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Application.mk APP_ABI\u003darm64-v8a NDK_ALL_ABIS\u003darm64-v8a NDK_DEBUG\u003d1 APP_PLATFORM\u003dandroid-21 NDK_OUT\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/debug/obj NDK_LIBS_OUT\u003d/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/debug/lib NDK_DEBUG\u003d1 /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libRadioMSG_Modem_Interface.so",
+      "abi": "arm64-v8a",
+      "output": "/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/debug/obj/local/arm64-v8a/libRadioMSG_Modem_Interface.so"
+    }
+  }
+}

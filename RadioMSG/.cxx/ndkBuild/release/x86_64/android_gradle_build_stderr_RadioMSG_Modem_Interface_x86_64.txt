@@ -1,0 +1,88 @@
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/AndFlmsg_Fldigi_Interface.cpp:17:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/AndFlmsg_Fldigi_Interface.h:6:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/rsid.h:53:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/AndFlmsg_Fldigi_Interface.cpp:23:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/olivia.h:32:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_mfsk.h:12:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_struc.h:59:55: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                 char *ValueFormat, char *IndexFormat="%3d", size_t Columns=10)
+                                                      ^
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/AndFlmsg_Fldigi_Interface.cpp:23:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/olivia.h:32:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_mfsk.h:14:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_cmpx.h:50:26: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+   void Print(char *Form="%+6.3f")
+                         ^
+3 warnings generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/modem.cxx:31:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+1 warning generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/psk/psk.cxx:44:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/psk.h:28:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+1 warning generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/mfsk/mfsk.cxx:36:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/AndFlmsg_Fldigi_Interface.h:6:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/rsid.h:53:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+1 warning generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/mt63/mt63.cxx:29:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/mt63.h:31:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+1 warning generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/rsid/rsid.cxx:36:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/rsid.h:53:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+1 warning generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/dominoex/dominoex.cxx:37:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/dominoex.h:31:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+1 warning generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/thor/thor.cxx:34:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/thor.h:31:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+1 warning generated.
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/olivia/olivia.cxx:32:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/olivia.h:31:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/modem.h:34:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/configuration.h:214:10: warning: '/*' within block comment [-Wcomment]
+                                0)   /* 1200 baud (V/UHF) default. */                                     \
+                                     ^
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/olivia/olivia.cxx:32:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/olivia.h:32:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_mfsk.h:12:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_struc.h:59:55: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                 char *ValueFormat, char *IndexFormat="%3d", size_t Columns=10)
+                                                      ^
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/olivia/olivia.cxx:32:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/olivia.h:32:
+In file included from /home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_mfsk.h:14:
+/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/fldigi/include/jalocha/pj_cmpx.h:50:26: warning: ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+   void Print(char *Form="%+6.3f")
+                         ^
+3 warnings generated.

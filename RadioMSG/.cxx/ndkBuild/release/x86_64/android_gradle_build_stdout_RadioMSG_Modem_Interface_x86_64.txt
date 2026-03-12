@@ -1,0 +1,10 @@
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= AndFlmsg_Fldigi_Interface.cpp
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= modem.cxx
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= psk.cxx
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= mfsk.cxx
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= mt63.cxx
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= rsid.cxx
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= dominoex.cxx
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= thor.cxx
+[x86_64] Compile++      : RadioMSG_Modem_Interface <= olivia.cxx
+[x86_64] SharedLibrary  : libRadioMSG_Modem_Interface.so

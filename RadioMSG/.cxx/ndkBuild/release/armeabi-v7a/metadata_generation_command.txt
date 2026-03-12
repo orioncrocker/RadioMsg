@@ -1,0 +1,17 @@
+Executable : /home/jdouyere/Android/Sdk/android-ndk-r21e/ndk-build
+arguments : 
+NDK_PROJECT_PATH=null
+APP_BUILD_SCRIPT=/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Android.mk
+NDK_APPLICATION_MK=/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/src/main/jni/Application.mk
+APP_ABI=armeabi-v7a
+NDK_ALL_ABIS=armeabi-v7a
+NDK_DEBUG=0
+APP_PLATFORM=android-21
+NDK_OUT=/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/release/obj
+NDK_LIBS_OUT=/home/jdouyere/AndroidStudioProjects/RadioMessages_BitBucket/RadioMSG/build/intermediates/ndkBuild/release/lib
+APP_SHORT_COMMANDS=false
+LOCAL_SHORT_COMMANDS=false
+-B
+-n
+jvmArgs : 
+

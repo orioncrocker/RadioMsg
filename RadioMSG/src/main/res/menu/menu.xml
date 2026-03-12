@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/cycledisplay"
+        android:title="Next Display"
+        android:icon="@drawable/commands"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/cyclespeaker"
+        android:title="Spk On"
+        android:icon="@drawable/speakermuted"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/cancelmsg"
+        android:title="Stop Msg"
+        android:icon="@drawable/cancelmsgnotx"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/Screens"
+        android:title="Screens"
+        app:showAsAction="never|withText">
+        <menu>
+            <item
+                android:id="@+id/MessagesScreen"
+                android:title="Messages">
+            </item>
+            <item
+                android:id="@+id/QuickSMSScreen"
+                android:title="Quick SMS List">
+            </item>
+            <item
+                android:id="@+id/QuickSMSButtonsScreen"
+                android:title="Quick SMS Buttons">
+            </item>
+            <item
+                android:id="@+id/ModemScreen"
+                android:title="Modem">
+            </item>
+            <item
+                android:id="@+id/MMSScreen"
+                android:title="Picture">
+            </item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/exit"
+        android:title="EXIT"
+        app:showAsAction="never|withText">
+    </item>
+    <item android:id="@+id/Bluetooth"
+        android:title="Bluetooth Audio">
+        <menu>
+            <item
+                android:id="@+id/BTon"
+                android:title="Bluetooth Audio ON"
+                app:showAsAction="never|withText">
+            </item>
+            <item
+                android:id="@+id/BToff"
+                android:title="Bluetooth Audio OFF"
+                app:showAsAction="never|withText">
+            </item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/manageMessages"
+        android:title="Manage Messages">
+        <menu>
+            <item
+                android:id="@+id/manageInbox"
+                android:title="Manage Inbox Items"
+                app:showAsAction="never|withText">
+            </item>
+            <item
+                android:id="@+id/manageSent"
+                android:title="Manage Sent Items"
+                app:showAsAction="never|withText">
+            </item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/prefs"
+        android:title="Settings"
+        app:showAsAction="never|withText">
+    </item>
+    <item
+        android:id="@+id/Preferences"
+        android:title="Save/Restore Settings"
+        app:showAsAction="never|withText">
+        <menu>
+            <item
+                android:id="@+id/savePreferences"
+                android:title="Save Settings to File"
+                app:showAsAction="never|withText">
+            </item>
+            <item
+                android:id="@+id/restorePreferences"
+                android:title="Restore from File"
+                app:showAsAction="never|withText">
+            </item>
+            <item
+                android:id="@+id/defaultPreferences"
+                android:title="Restore to Default"
+                app:showAsAction="never|withText">
+            </item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/commands"
+        android:title="Commands">
+        app:showAsAction="ifRoom|withText"
+    </item>
+    <item
+        android:id="@+id/SilentSub"
+        android:title="Alarms"
+        app:showAsAction="never|withText">
+        <menu>
+            <item
+                android:id="@+id/Silent"
+                android:title="Silent">
+                app:showAsAction="ifRoom|withText"
+            </item>
+            <item
+                android:id="@+id/VibrateOnly"
+                android:title="Vibrate Only">
+                app:showAsAction="ifRoom|withText"
+            </item>
+            <item
+                android:id="@+id/SoundOnly"
+                android:title="Sound Only">
+                app:showAsAction="ifRoom|withText"
+            </item>
+            <item
+                android:id="@+id/SoundVibrate"
+                android:title="Sound / Vibrate">
+                app:showAsAction="ifRoom|withText"
+            </item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/track"
+        android:title="Track POIs"
+        android:icon="@drawable/trackoff"
+        app:showAsAction="ifRoom">
+    </item>
+    <item
+        android:id="@+id/record"
+        android:title="Record Audio"
+        app:showAsAction="never|withText">
+    </item>
+    <item
+        android:id="@+id/About"
+        android:title="About">
+        app:showAsAction="ifRoom|withText"
+    </item>
+
+</menu>
+
+    <!-- app:showAsAction="ifRoom|withText"
+		android:showAsAction="ifRoom|withText"
+		app:orderInCategory="10">
+		-->

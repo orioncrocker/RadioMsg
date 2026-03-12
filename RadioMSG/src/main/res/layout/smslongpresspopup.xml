@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="match_parent"
+	android:layout_weight="1.00"
+	android:background="#012600"
+	android:id="@+id/smspopupscreen" >
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:weightSum="1">
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:weightSum="1"
+			android:layout_weight="0.001"
+			android:id="@+id/spinnerlayout" >
+			<Spinner
+				android:id="@+id/modes_spinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:spinnerMode="dropdown" />
+			<Spinner
+				android:id="@+id/to_spinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:spinnerMode="dropdown" />
+		</LinearLayout>
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:weightSum="1"
+			android:layout_weight="0.001"
+			android:id="@+id/spinnerlayout2" >
+			<Spinner
+				android:id="@+id/via_spinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:spinnerMode="dropdown" />
+			<CheckBox
+				android:id="@+id/fullalias"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.5"
+				android:text="Alias and Details" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/FrameLayout2"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.02"
+			android:orientation="horizontal"
+			android:weightSum="1" >
+
+			<Button
+				android:id="@+id/button_return"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="Return" >
+			</Button>
+			<Button
+				android:id="@+id/button_radioresend"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="Re-Send" >
+			</Button>
+			<Button
+				android:id="@+id/button_forward"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="Forward">
+			</Button>
+			<Button
+				android:id="@+id/button_requestposition"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="Req. Pos." >
+			</Button>
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/FrameLayout3"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.02"
+			android:orientation="horizontal"
+			android:weightSum="1" >
+			<Button
+				android:id="@+id/button_whereisit"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="WHERE  IS IT?" >
+			</Button>
+			<Button
+				android:id="@+id/button_mapview"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="MAP VIEW" >
+			</Button>
+			<Button
+				android:id="@+id/button_share"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="Share" >
+			</Button>
+			<Button
+				android:id="@+id/button_delete"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+				android:layout_gravity="fill_vertical"
+				android:layout_weight="0.25"
+				android:text="Delete" >
+			</Button>
+		</LinearLayout>
+		<TextView
+			android:id="@+id/smstext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="18sp" >
+		</TextView>
+		<TextView
+			android:id="@+id/positiontext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="18sp" >
+		</TextView>
+		<TextView
+			android:id="@+id/picturetext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="18sp" >
+		</TextView>
+		<TextView
+			android:id="@+id/fromtext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="18sp" >
+		</TextView>
+		<ImageView
+			android:id="@+id/mmsimage"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:adjustViewBounds="true"
+			android:scaleType="fitCenter"
+			android:minHeight="10dip"  />
+		<LinearLayout
+			android:id="@+id/FrameLayout4"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.04"
+			android:weightSum="1"
+			android:orientation="horizontal">
+			<EditText
+				android:id="@+id/edit_text_out"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:maxLines="5"
+				android:textSize="10pt" >
+				<requestFocus >
+				</requestFocus>
+			</EditText>
+			<Button
+				android:id="@+id/button_reply"
+				android:layout_width="87dp"
+				android:layout_height="70dp"
+
+				android:layout_weight="0.25"
+				android:text="Reply" >
+			</Button>
+
+		</LinearLayout>
+
+	</LinearLayout>
+</ScrollView>

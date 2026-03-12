@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1.00"
+    android:background="#012600"
+    android:id="@+id/resenddialog" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select How Many/How Long, then the type of message to re-send"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"/>
+
+        <!-- add RadioGroup which contain the many RadioButton-->
+        <RadioGroup
+            android:layout_marginTop="20dp"
+            android:id="@+id/howmany"
+            android:layout_marginLeft="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_L"
+                android:text="All Since Last Request"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_1"
+                android:text="1"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_2"
+                android:text="2"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_3"
+                android:text="3"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_5"
+                android:text="5"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_7"
+                android:text="7"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_10"
+                android:text="10"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/howmany_20"
+                android:text="20"
+                android:textSize="18dp"/>
+
+        </RadioGroup>
+
+        <!-- add RadioGroup which contain the many RadioButton-->
+        <RadioGroup
+            android:layout_marginTop="25dp"
+            android:id="@+id/what"
+            android:layout_marginLeft="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_3"
+                android:text="Last X email/sms replies only (Short version)"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_4"
+                android:text="Last X email/sms replies only (Long version)"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_1"
+                android:text="Last X Message(s) (any type)"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_8"
+                android:text="Last X Message(s) - Radio Only - No sms/email"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_2"
+                android:text="Last X Position(s) only"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_5"
+                android:text="Received in the last X Minute(s)"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_6"
+                android:text="Received in the last X Hour(s)"
+                android:textSize="18dp"/>
+
+            <RadioButton
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_7"
+                android:text="Received in the last X Day(s)"
+                android:textSize="18dp"/>
+        </RadioGroup>
+        <CheckBox
+            android:layout_marginTop="15dp"
+            android:id="@+id/forcerelaying"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:textSize="18dp"
+            android:text="Force via station to relay the Re-Send Request" />
+    </LinearLayout>
+</ScrollView>

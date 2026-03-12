@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <PreferenceScreen
+        android:key="simpleexpertPS"
+        android:title="USAGE MODES">
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/usagemodes"
+            android:entryValues="@array/usage_modes"
+            android:key="USAGEMODE"
+            android:summary="Selects usage specific features"
+            android:title="Usage Mode" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="EXPERTMODE"
+            android:summary="Opens complex functions and settings"
+            android:title="Expert Mode" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:dependency="EXPERTMODE"
+        android:key="modelistPS"
+        android:title="MODES">
+        <ListPreference
+            android:defaultValue="MFSK16"
+            android:key="HF-Poor"
+            android:title="Mode list for HF Poor conditions" />
+        <ListPreference
+            android:defaultValue="MFSK32"
+            android:key="HF-Good"
+            android:title="Mode list for HF Good conditions" />
+        <ListPreference
+            android:defaultValue="MFSK64"
+            android:key="HF-Fast"
+            android:title="Mode list for HF Fast Transfers" />
+        <ListPreference
+            android:defaultValue="MFSK32"
+            android:key="UHF-Poor"
+            android:title="Mode list for UHF Poor conditions" />
+        <ListPreference
+            android:defaultValue="PSK500R"
+            android:key="UHF-Good"
+            android:title="Mode list for UHF Good conditions" />
+        <ListPreference
+            android:defaultValue="PSK500RX2"
+            android:key="UHF-Fast"
+            android:title="Mode list for UHF Fast Transfers" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="quickMessagesPS"
+        android:title="QUICK MESSAGES">
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS1"
+            android:title="Message 1" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS2"
+            android:title="Message 2" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS3"
+            android:title="Message 3" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS4"
+            android:title="Message 4" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS5"
+            android:title="Message 5" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS6"
+            android:title="Message 6" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS7"
+            android:title="Message 7" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS8"
+            android:title="Message 8" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS9"
+            android:title="Message 9" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS10"
+            android:title="Message 10" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS11"
+            android:title="Message 11" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS12"
+            android:title="Message 12" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS13"
+            android:title="Message 13" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS14"
+            android:title="Message 14" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS15"
+            android:title="Message 15" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS16"
+            android:title="Message 16" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS17"
+            android:title="Message 17" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS18"
+            android:title="Message 18" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS19"
+            android:title="Message 19" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS20"
+            android:title="Message 20" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS21"
+            android:title="Message 21" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS22"
+            android:title="Message 22" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS23"
+            android:title="Message 23" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS24"
+            android:title="Message 24" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS25"
+            android:title="Message 25" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS26"
+            android:title="Message 26" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS27"
+            android:title="Message 27" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS28"
+            android:title="Message 28" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS29"
+            android:title="Message 29" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="QUICKSMS30"
+            android:title="Message 30" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:dependency="EXPERTMODE"
+        android:key="userInterfacePS"
+        android:title="USER INTERFACE">
+        <PreferenceScreen
+            android:dependency="EXPERTMODE"
+            android:key="swipablescreensPS"
+            android:title="Swipeable screens (req. restart)">
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="SMSVIEW"
+                android:title="Messages Screen"
+                android:enabled="false"/>
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="MODEMVIEWnoWF"
+                android:title="Modem Screen" />
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="MMSVIEW"
+                android:title="Pictures Screen" />
+            <!--
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="SELCALLVIEW"
+                android:title="Selcall Screen" />
+            -->
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="SMSQUICKLISTVIEW"
+                android:title="Quick SMS List" />
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="SMSQUICKBUTTONVIEW"
+                android:title="Quick SMS Buttons" />
+        </PreferenceScreen>
+        <EditTextPreference
+            android:defaultValue="12"
+            android:inputType="number"
+            android:key="BUTTONTEXTSIZE"
+            android:title="Button Text size (default 12)" />
+        <ListPreference
+            android:defaultValue="3"
+            android:entries="@array/whichfolders"
+            android:entryValues="@array/whichfolders_values"
+            android:key="WHICHFOLDERS"
+            android:summary="Inbox, Sent Items or Both"
+            android:title="Folders to Display">
+        </ListPreference>
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/themes"
+            android:entryValues="@array/themes_values"
+            android:key="APPTHEME"
+            android:title="App Theme" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="SHORTPRESSONLIST"
+            android:title="Allow Single Click on Message List" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="SHORTPRESSONQUICKSMS"
+            android:title="Allow Single Click on Quick Message" />
+        <EditTextPreference
+            android:defaultValue="7"
+            android:dependency="EXPERTMODE"
+            android:inputType="number"
+            android:key="QUICKSMSPADDING"
+            android:summary="separation between quick messages lines. Default 7, valid is 1 to 100"
+            android:title="Quick Messages spacing">
+        </EditTextPreference>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="SETSENDPOSFORQUICKSMS"
+            android:summary="In quick sms screen, pre-set 'Send Pos with Message' to ON"
+            android:title="'Send pos with msg' default ON" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="KEEPSCREENON"
+            android:title="Keep Screen On"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="RESTORETOANDVIA"
+            android:title="Restore TO and VIA at startup"
+            android:summary="Remember values between sessions"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ALLOWSELECTONBACKSCROLL"
+            android:title="Allow Text Selection On Back Scroll"/>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="modemPS"
+        android:title="MODEM">
+        <PreferenceCategory
+            android:key="modemgeneralCAT"
+            android:title="General Settings">
+            <ListPreference
+                android:defaultValue="8"
+                android:entries="@array/volume"
+                android:entryValues="@array/volume_values"
+                android:key="VOLUME"
+                android:summary="Internal Modem Volume"
+                android:title="Internal Modem Volume">
+            </ListPreference>
+            <ListPreference
+                android:defaultValue="0"
+                android:entries="@array/audioinput"
+                android:entryValues="@array/audioinput_values"
+                android:key="AUDIOINPUT"
+                android:summary="Requires Modem Off/On cycling"
+                android:title="Audio Input Source">
+            </ListPreference>
+            <ListPreference
+                android:defaultValue="-99"
+                android:entries="@array/speakervolume"
+                android:entryValues="@array/speakervolume_values"
+                android:key="SPEAKERVOLUME"
+                android:summary="Only on Android 9 and above. Requires Modem Off/On cycling"
+                android:title="Radio Audio to Speaker">
+            </ListPreference>
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="AUTOADJUSTMEDIAVOLUME"
+                android:summary="Resets Media Volume before every transmission"
+                android:title="Auto Adjust Media Volume">
+            </CheckBoxPreference>
+            <ListPreference
+                android:defaultValue="0.1"
+                android:entries="@array/waterfalldynamic"
+                android:entryValues="@array/waterfalldynamic_values"
+                android:key="WATERFALLGAIN"
+                android:summary="Requires Waterfall Off/On cycling"
+                android:title="Waterfall Dynamic">
+            </ListPreference>
+            <EditTextPreference
+                android:defaultValue="1500"
+                android:dependency="EXPERTMODE"
+                android:inputType="number"
+                android:key="AFREQUENCY"
+                android:summary="Audio Frequency 500 to 2500Hz"
+                android:title="Audio Frequency">
+            </EditTextPreference>
+            <EditTextPreference
+                android:defaultValue="0"
+                android:dependency="EXPERTMODE"
+                android:key="PRETONEDURATION"
+                android:summary="In MilliSeconds. 0 = Disabled, Max 10,000"
+                android:title="Transmit Tone Before Data">
+            </EditTextPreference>
+            <EditTextPreference
+                android:defaultValue="0"
+                android:dependency="EXPERTMODE"
+                android:key="TUNEDURATION"
+                android:summary="0 = Toggle, OR 1 to 60 Seconds"
+                android:title="Tune Button Tone Duration">
+            </EditTextPreference>
+            <ListPreference
+                android:defaultValue="0"
+                android:entries="@array/outputchannelsformat"
+                android:entryValues="@array/outputchannelsformat_values"
+                android:key="AUDIOOUTPUTFORMAT"
+                android:summary="PTT Tone"
+                android:title="Tone OFF or ON Left or Right channels">
+            </ListPreference>
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="EXPERTMODE"
+                android:key="SLOWCPU"
+                android:summary="Save CPU resources"
+                android:title="SLOW CPU" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="EXPERTMODE"
+                android:key="IDLEMODEMOFF"
+                android:summary="Stop Modem when idle. Sender must have TxRSID ON"
+                android:title="Save Battery" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="EXPERTMODE"
+                android:key="SAMPLEAUDIOASFLOATS"
+                android:summary="** Experimental, may degrade the modem sensitivity **"
+                android:title="Sample in Floating Point format" />
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:key="modesspecificsCAT"
+            android:title="Modes Specific Settings">
+            <PreferenceScreen
+                android:dependency="EXPERTMODE"
+                android:key="rsidPS"
+                android:title="IDs">
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="RSIDWIDESEARCH"
+                    android:title="Searches Passband" />
+                <EditTextPreference
+                    android:defaultValue="200"
+                    android:dependency="EXPERTMODE"
+                    android:key="RSIDMINBW"
+                    android:summary="180 to 1000. Valid when Search Passband is NOT selected"
+                    android:title="RSID detection bandwidth in Hz" />
+                <ListPreference
+                    android:defaultValue="2"
+                    android:entries="@array/rsid_errors_list"
+                    android:entryValues="@array/rsid_errors_values"
+                    android:key="RSID_ERRORS"
+                    android:title="Allow Errors" />
+            </PreferenceScreen>
+            <PreferenceScreen
+                android:dependency="EXPERTMODE"
+                android:key="mt63PS"
+                android:title="MT63">
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="MT63USETONES"
+                    android:title="Transmit start tones" />
+                <EditTextPreference
+                    android:defaultValue="2"
+                    android:key="MT63TONEDURATION"
+                    android:summary="(1 to 10 seconds)"
+                    android:title="Tone Duration in Seconds" />
+            </PreferenceScreen>
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="rigcontrolPS"
+        android:title="@string/pref_RIGCONTROL">
+        <PreferenceCategory
+            android:key="PttCategory"
+            android:title="@string/pref_PttMethod">
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="RTSASPTT"
+                android:title="@string/pref_RtsIsPttSignalLine" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="DTRASPTT"
+                android:title="@string/pref_DtrIsPttSignalLine" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="CATASPTT"
+                android:title="@string/pref_CatIsPtt" />
+            <ListPreference
+                android:dependency="CATASPTT"
+                android:defaultValue="1"
+                android:entries="@array/riglist"
+                android:entryValues="@array/rig_list"
+                android:key="TRANSCEIVER"
+                android:title="Connected Transceiver" />
+            <EditTextPreference
+                android:defaultValue="0"
+                android:key="AUDIODELAYAFTERPTT"
+                android:summary="@string/pref_DelayInMsecBeforeStartingAudio"
+                android:title="@string/pref_StartOfTransmitPttDelay" />
+            <EditTextPreference
+                android:defaultValue="0"
+                android:key="PTTDELAYAFTERAUDIO"
+                android:summary="@string/pref_DelayInMsecBeforeReleasingPtt"
+                android:title="@string/pref_EndtOfTransmitPttDelay" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="userPS"
+        android:title="PERSONAL DATA">
+        <EditTextPreference
+            android:defaultValue="NoName"
+            android:key="CALL"
+            android:title="My Callsign or Name"></EditTextPreference>
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="TOLIST"
+            android:summary="Letters, Numbers or '-+_/@.' only. For Aliases use alias=details. E.g. friend=0412345678 or friend=myfriend@hisemail.com"
+            android:title="List of contacts separated by comma"></EditTextPreference>
+        <EditTextPreference
+            android:defaultValue=""
+            android:dependency="EXPERTMODE"
+            android:key="RELAYLIST"
+            android:summary="Letters, Numbers or '-+_/@.' only. For access passwords use callsign:relaying password:IOT password. E.g. vk2eta-1:relayPw:IOTpw"
+            android:title="List of relay stations separated by comma"></EditTextPreference>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="GPSTimePS"
+        android:title="GPS and TRACKING">
+        <CheckBoxPreference
+            android:checked="true"
+            android:key="KEEPGPSWARM"
+            android:summary="For Fast GPS Fixes"
+            android:title="Run GPS at Regular Intervals" />
+        <EditTextPreference
+            android:defaultValue="60"
+            android:key="GPSINTERVAL"
+            android:summary="(1 to 300 Seconds)"
+            android:title="Time between automatic fixes. Watch battery usage!" />
+        <CheckBoxPreference
+            android:checked="false"
+            android:key="USEGPSTIME"
+            android:title="Use GPS time when available"
+            android:summary="Prevents time drift when outside cellular networks" />
+        <PreferenceCategory
+            android:key="modemgeneralCAT"
+            android:title="General Settings">
+            <EditTextPreference
+                android:defaultValue="2"
+                android:key="GPSTRACKINGINTERVAL"
+                android:summary="(1 to 300 Seconds)"
+                android:title="Time between GPS fixes when tracking" />
+            <EditTextPreference
+                android:defaultValue="350"
+                android:key="TRACKINGFIRSTWARNING"
+                android:summary="(1 to 1000 Metres)"
+                android:title="1st warning distance" />
+            <EditTextPreference
+                android:defaultValue="200"
+                android:key="TRACKINGSECONDWARNING"
+                android:summary="(1 to 1000 Metres)"
+                android:title="2nd warning distance" />
+            <EditTextPreference
+                android:defaultValue="50"
+                android:key="TRACKINGTHIRDWARNING"
+                android:summary="(1 to 1000 Metres)"
+                android:title="3rd and last warning distance" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:dependency="EXPERTMODE"
+        android:key="relayPS"
+        android:title="RELAYING">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="UNATTENDEDRELAY"
+            android:summary="Prevents Image, Alerts Pop-Ups and Crash Reporting"
+            android:title="Works as Unattended Relay Station" />
+        <EditTextPreference
+            android:key="ACCESSPASSWORD"
+            android:summary="Blank = access by all, otherwise restricts relaying functions, Start with underscore for time based passwords"
+            android:title="Relaying Password" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="RADIORELAY"
+            android:summary="Valid only for Messages using the 'Via' address"
+            android:title="Relay Messages over Radio" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="SMSSENDRELAY"
+            android:summary="Valid only for Messages using the 'Via' address"
+            android:title="Relay Outgoing Messages as SMS over Cellular Network" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="LISTENFORSMS"
+            android:summary="Store Incoming SMSs that match the filter below"
+            android:title="Listen for Incoming Cellular SMS Messages" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="RELAYRECEIVEDSMS"
+            android:summary="If not selected, keep them in the received list for Pick-up"
+            android:title="Immediately Send Received SMSs Over the Radio" />
+        <EditTextPreference
+            android:defaultValue="@string/defaultsmsfilter"
+            android:key="SMSLISTENINGFILTER"
+            android:summary="Eg: *,*,0 to forward from Any Number, to ALL, Everytime"
+            android:title="Cellular SMSes Filter for Forwarding Over Radio" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="EMAILRELAY"
+            android:summary="Valid only for Messages using the 'Via' address"
+            android:title="Relay Messages as Emails over Internet" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="LISTENFOREMAILS"
+            android:summary="Uses more data (Could be important if on cellular data)"
+            android:title="Listen for Incoming E-mail Messages" />
+        <EditTextPreference
+            android:defaultValue="600"
+            android:inputType="number"
+            android:key="CHECKEMAILSEVERY"
+            android:summary="Be mindful of data usage if on cellular data"
+            android:title="How often (in Seconds) to check for new emails" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="RELAYRECEIVEDEMAILS"
+            android:summary="If not selected, keep them in the received list for Pick-up"
+            android:title="Immediately Send Received E-Mails Over the Radio" />
+        <EditTextPreference
+            android:defaultValue="@string/defaultemailfilter"
+            android:key="EMAILLISTENINGFILTER"
+            android:summary="Eg: *,*,0 to forward from Any email address, to ALL, Everytime"
+            android:title="Email Filter for Forwarding Over Radio" />
+        <EditTextPreference
+            android:defaultValue="90"
+            android:inputType="number"
+            android:key="DAYSTOKEEPLINK"
+            android:summary="Allows Cellular SMS/Email Replies to be Directed to the Proper CallSign"
+            android:title="How many Days to link an SMS or Email with a Callsign" />
+        <EditTextPreference
+            android:inputType="textEmailAddress"
+            android:key="RELAYEMAILADDRESS"
+            android:title="Email address"
+            android:summary="Eg: myemail@gmx.com"/>
+        <EditTextPreference
+            android:inputType="textEmailAddress"
+            android:key="RELAYUSERNAME"
+            android:title="Login User Name"
+            android:summary="E.g. myemail@gmx.com Or myemail"/>
+        <EditTextPreference
+            android:inputType="textPassword"
+            android:key="RELAYEMAILPASSWORD"
+            android:title="Account password" />
+        <EditTextPreference
+            android:key="RELAYEMAILIMAPSERVER"
+            android:title="IMAP mail server"
+            android:summary="E.g. imap.gmx.com"/>
+        <ListPreference
+            android:defaultValue="SSH/TLS"
+            android:entries="@array/mail_protocol_list"
+            android:entryValues="@array/mail_protocol_values"
+            android:key="IMAPPROTOCOL"
+            android:title="IMAP Protocol"
+            android:summary="Security Protocol (SSH etc..)" />
+        <EditTextPreference
+            android:defaultValue="993"
+            android:key="RELAYEMAILIMAPPORT"
+            android:title="IMAP port to connect to"
+            android:summary="Default is 993"/>
+        <EditTextPreference
+            android:key="RELAYEMAILSMTPSERVER"
+            android:title="SMTP server"
+            android:summary="E.g. mail.gmx.com"/>
+        <ListPreference
+            android:defaultValue="STARTTLS"
+            android:entries="@array/mail_protocol_list"
+            android:entryValues="@array/mail_protocol_values"
+            android:key="SMTPPROTOCOL"
+            android:title="SMTP Protocol"
+            android:summary="Security Protocol (SSH etc..)"/>
+        <EditTextPreference
+            android:defaultValue="587"
+            android:key="RELAYEMAILSMTPPORT"
+            android:title="SMTP port to connect to"
+            android:summary="Default is 587"/>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:dependency="EXPERTMODE"
+        android:key="bluetoothPS"
+        android:title="BLUETOOTH">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="BLUETOOTHAUTOCONNECT"
+            android:summary="Auto Connect Bluetooth Audio"
+            android:title="When Bluetooth Device is Present" />
+        <EditTextPreference
+            android:key="BLUETOOTHDEVICENAME"
+            android:summary="As shown in Bluetooth Settings"
+            android:title="Name of Bluetooth Device for Audio" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:dependency="EXPERTMODE"
+        android:key="ackPS"
+        android:title="MESSAGE ACKNOWLEDGMENT">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ACKWITHRSID"
+            android:summary="Use RSID instead of Beep Sequence when msg is directed to this callsign"
+            android:title="Acknowledge using RSID" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="LINKRSIDACKTOMSG"
+            android:summary="When an acknowledgment is received, mark the last sent message as 'Received'"
+            android:title="Mark Acklowledged Messages" />
+        <CheckBoxPreference
+            android:dependency="LINKRSIDACKTOMSG"
+            android:defaultValue="false"
+            android:key="FORWARDRSIDACKTOORIGIN"
+            android:summary="When a cellular/Email Message is acknowledged, inform the originator"
+            android:title="Forward Msg Ack to Origin" />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="numberSigned"
+            android:key="ACKPOSITION"
+            android:summary="Each Station to have a different number between 1 and 8(Max). 0 = disabled."
+            android:title="Acknowledgment Position" />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="number"
+            android:key="MAXACKS"
+            android:summary="So that we wait for all Acknowledgments before transmitting the next message. Max = 8"
+            android:title="Highest Acknowledgment Position in Group" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="ACKONLYALERTS"
+            android:summary="Uncheck for All Messages. Only valid if Acknowledgment Position above is not disabled."
+            android:title="Only Acknowledge Alert Messages" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:dependency="EXPERTMODE"
+        android:key="experimentalPS"
+        android:title="EXPERIMENTAL">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="RESTORESETTINGATSTART"
+            android:title="Restore Settings at start"
+            android:summary="Oppo F1F issue"/>
+        <EditTextPreference
+            android:defaultValue="0"
+            android:inputType="number"
+            android:key="RESTARTEVERY"
+            android:title="Auto Restart App at Intervals"
+            android:summary="in Minutes, 0 = Do NOT Autorestart" />
+    </PreferenceScreen>
+</PreferenceScreen>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mmsmailscreen"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.00">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:layout_weight="0.001"
+            android:id="@+id/spinnerlayout" >
+            <Spinner
+                android:id="@+id/modes_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:spinnerMode="dropdown" />
+            <Spinner
+                android:id="@+id/to_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:layout_weight="0.001"
+            android:id="@+id/spinnerlayout2" >
+            <Spinner
+                android:id="@+id/via_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:spinnerMode="dropdown" />
+            <CheckBox
+                android:id="@+id/fullalias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Alias and Details" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/FrameLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/button_send"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="Send">
+
+                <requestFocus></requestFocus>
+            </Button>
+
+            <Button
+                android:id="@+id/button_newpicture"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="New Picture"></Button>
+
+            <Button
+                android:id="@+id/button_colour"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="Colour/B&amp;W"></Button>
+
+            <Button
+                android:id="@+id/button_speed"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="Speed"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/imageOptionsLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/button_imagemode"
+                android:layout_width="87dp"
+                android:layout_height="70dp"
+                android:layout_gravity="fill_vertical"
+                android:text="Image Mode"></Button>
+
+            <LinearLayout
+                android:id="@+id/FrameLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/imagemodetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"></TextView>
+
+                <TextView
+                    android:id="@+id/totalestimatetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/FrameLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/button_lowres"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="Low Resol."></Button>
+
+            <Button
+                android:id="@+id/button_mediumlowres"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="Med. Low Resol."></Button>
+
+            <Button
+                android:id="@+id/button_mediumhighres"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="Med. High Resol."></Button>
+
+            <Button
+                android:id="@+id/button_highres"
+                android:layout_width="87dp"
+                android:layout_height="77dp"
+                android:layout_gravity="fill_vertical"
+                android:layout_weight="0.25"
+                android:text="High Resol."></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/FrameLayout3A"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <CheckBox
+                android:id="@+id/sendgpspos"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Send Position" />
+
+            <CheckBox
+                android:visibility="gone"
+                android:id="@+id/scrambled"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Scrambled" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_text_out"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.72"
+            android:maxLines="5"
+            android:textSize="10pt"></EditText>
+
+        <ImageView
+            android:id="@+id/mmsimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:minHeight="300dip"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+</ScrollView>
+
+
