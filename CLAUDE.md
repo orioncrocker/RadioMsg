@@ -8,6 +8,8 @@ RadioMSG is an Android app for situational awareness messaging over radio. It su
 
 ## Build Commands
 
+Requires JDK 21 and `ANDROID_HOME` pointing to an Android SDK with platform-34, build-tools-34, and NDK 28.2 installed.
+
 All commands use the Gradle wrapper from the project root:
 
 ```bash
@@ -17,6 +19,8 @@ All commands use the Gradle wrapper from the project root:
 ./gradlew installDebug       # Build and install debug APK on connected device
 ./gradlew lint               # Run lint checks
 ```
+
+**Build system:** Gradle 8.4, AGP 8.1.0
 
 **Build variants:**
 - Debug: `jniDebuggable=true`, NDK debug symbols enabled
@@ -60,16 +64,19 @@ Radio/USB → Modem.java → JNI bridge → Fldigi engine → decoded message
 ## Key Configuration
 
 - **App version:** 2.1.0.18A (`AndroidManifest.xml`)
-- **SDK:** minSdk 21, targetSdk/compileSdk 28
+- **SDK:** minSdk 21, targetSdk 28, compileSdk 34
+- **NDK:** 28.2.13676358 — required for 16KB page alignment (Android 15+)
 - **NDK C++ standard:** C++17, using `c++_shared` STL
 - **Permissions:** Location, Audio, Bluetooth, SMS, Camera, USB, Vibration
 - USB device filter: `res/xml/device_filter.xml`
 - Lint suppressions: `RadioMSG/lint.xml`
+- `android.nonFinalResIds=false` in `gradle.properties` — keeps R fields as constants so existing `switch` statements on resource IDs compile under AGP 8
+- `android.suppressUnsupportedCompileSdk=34` — suppresses AGP 8.1 warning about compileSdk 34 (cosmetic only)
 
 ## Notable Dependencies
 
 - `com.github.mik3y:usb-serial-for-android` — USB serial (for radio TNCs)
 - `com.sun.mail:android-mail` — JavaMail for IMAP/SMTP
 - `org.jsoup:jsoup` — HTML parsing
-- `io.michaelrocks:libphonenumber-android` — Phone number parsing
-- `acra-4.5.0.jar` (local) — Crash reporting via `RadioMSGDebug.java`
+- `io.michaelrocks:libphonenumber-android:9.0.24` — Phone number parsing
+- `acra-4.5.0.jar` (local, `libs/`) — Crash reporting via `RadioMSGDebug.java`

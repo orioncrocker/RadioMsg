@@ -15,3 +15,5 @@ Requires JDK 21 and Android SDK with `ANDROID_HOME` set.
 ```
 
 APK output: `RadioMSG/build/outputs/apk/debug/RadioMSG-debug.apk`
+
+For more details, see [CLAUDE.md](CLAUDE.md).
