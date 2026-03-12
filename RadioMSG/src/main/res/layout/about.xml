@@ -9,22 +9,27 @@
 			android:orientation="vertical" android:layout_width="fill_parent"
 			android:layout_height="fill_parent" android:weightSum="1">
 
-			<TextView 
+			<TextView
 				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:textSize="18sp" android:padding="5dp"
 				android:text="                RadioMSG\n
         by John Douyere (VK2ETA)" />
-			<TextView 
+			<TextView
 				android:id="@+id/versiontextview" android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:textSize="18sp" android:padding="5dp" android:layout_weight="0.13"/>
-			<TextView 
+			<TextView
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:textSize="16sp" android:padding="8dp"
+				android:textColor="#FFCC00"
+				android:text="@string/txt_unofficial_build"/>
+			<TextView
 				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:textSize="18sp" android:padding="5dp"
 				android:text= "@string/txt_WelcomeIntro"/>
 			<LinearLayout android:id="@+id/FrameLayout2"
-				android:layout_width="fill_parent" 
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_weight="0.08" 
+				android:layout_weight="0.08"
 				android:weightSum="1">
 				<Button android:id="@+id/button_returntomainscreen"
 					android:layout_height="fill_parent"

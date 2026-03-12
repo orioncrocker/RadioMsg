@@ -230,6 +230,7 @@
     <string name="txt_ViewPrint">for Viewing or Printing</string>
     <string name="txt_WRAP">WRAP</string>
     <string name="txt_WarningSharingFormOnly">Warning! This is for sharing the raw Form ONLY. To save the typed data as a message, use the buttons at the bottom of the form. Proceed with sending the RAW Form (No data)?</string>
+    <string name="txt_unofficial_build">⚠ Unofficial community build — not released by the original author (VK2ETA). Source: github.com/orioncrocker/RadioMsg</string>
     <string name="txt_WelcomeIntro">\n Open source software under GNU licence.\n\n  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\n WARNING: Exchanging messages over Radio using this application results in NO PRIVACY WHATSOEVER.\n\nAssume that ALL MESSAGES can be received by others, including persons the messages were not intended to. \n\nIt is your responsibility to ensure 3rd Party Amateur messaging laws are followed in your country.\n\n Modems based on Fldigi by David (Dave) Freese (W1HKJ) and team.\n\n Swipe across the screen to navigate to the other screens and use the device Menu button to get access to the preferences and additional functions.\n\n"</string>
     <string name="txt_Yes">Yes</string>
     <string name="txt_arlmessage">ARRLl Message</string>
