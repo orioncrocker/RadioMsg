@@ -186,7 +186,7 @@
                 android:defaultValue="true"
                 android:key="SMSVIEW"
                 android:title="Messages Screen"
-                android:enabled="false"/>
+                />
             <CheckBoxPreference
                 android:defaultValue="true"
                 android:key="MODEMVIEWnoWF"

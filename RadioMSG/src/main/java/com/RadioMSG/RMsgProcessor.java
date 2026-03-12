@@ -2026,7 +2026,7 @@ public class RMsgProcessor extends Service {
     public static void handlefolderstructure() {
 
         //VK2ETA To-Do: add exception here when there is no external storage
-        final String defaultPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        final String defaultPath = RadioMSG.myContext.getExternalFilesDir(null).getAbsolutePath();
         // are we on Linux/Android OR Windows?
         if (File.separator.equals("/")) {
             Separator = "/";

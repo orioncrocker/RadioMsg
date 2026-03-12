@@ -77,6 +77,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.Telephony;
 import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyCallback;
 import android.telephony.SmsMessage;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
@@ -693,30 +694,36 @@ public class RadioMSG extends AppCompatActivity {
     // This is to prevent the phone call's audio to be sent to the radio,
     // as well as stopping the TXing from this app until the phone call is finished.
     // This action is only active when we have enabled Bluetooth in the application.
-    private PhoneStateListener mPhoneStateListener = new PhoneStateListener() {
-        @Override
-        public void onCallStateChanged(int state, String incomingNumber) {
-            if (state == TelephonyManager.CALL_STATE_RINGING) {
-                // Log.v(TAG, " CALL_STATE_RINGING");
-                // If using the bluetooth interface for the digital link,
-                // disable it otherwise the phone call will use it.
-                if (RadioMSG.toBluetooth) {
-                    RadioMSG.toBluetooth = false;
-                    RadioMSG.mAudioManager.setMode(AudioManager.MODE_NORMAL);
-                    // Froyo bug
-                    RadioMSG.mAudioManager.stopBluetoothSco();
-                    if (RadioMSG.mBluetoothAdapter != null) {
-                        if (RadioMSG.mBluetoothAdapter.isEnabled()) {
-                            RadioMSG.mBluetoothAdapter.disable();
-                        }
+    private PhoneStateListener mPhoneStateListener = null; // used on API < 31
+    private Object mCallStateCallback = null; // holds CallStateCallback on API 31+
+
+    private void handleCallStateChange(int state) {
+        if (state == TelephonyManager.CALL_STATE_RINGING) {
+            // If using the bluetooth interface for the digital link,
+            // disable it otherwise the phone call will use it.
+            if (RadioMSG.toBluetooth) {
+                RadioMSG.toBluetooth = false;
+                RadioMSG.mAudioManager.setMode(AudioManager.MODE_NORMAL);
+                // Froyo bug
+                RadioMSG.mAudioManager.stopBluetoothSco();
+                if (RadioMSG.mBluetoothAdapter != null) {
+                    if (RadioMSG.mBluetoothAdapter.isEnabled()) {
+                        RadioMSG.mBluetoothAdapter.disable();
                     }
-                    RadioMSG.mAudioManager.setBluetoothScoOn(false);
                 }
-            } else if (state == TelephonyManager.CALL_STATE_IDLE) {
-                // Log.v(TAG, " CALL_STATE_IDLE");
+                RadioMSG.mAudioManager.setBluetoothScoOn(false);
             }
         }
-    };
+    }
+
+    @TargetApi(Build.VERSION_CODES.S)
+    private class CallStateCallback extends TelephonyCallback
+            implements TelephonyCallback.CallStateListener {
+        @Override
+        public void onCallStateChanged(int state) {
+            handleCallStateChange(state);
+        }
+    }
 
 
     // Update the list view IF we are on that view AND NOT in a popup
@@ -1263,7 +1270,11 @@ public class RadioMSG extends AppCompatActivity {
         // test filter.addAction(AudioManager.ACTION_SCO_AUDIO_STATE_CHANGED);
         //}
         // Not called filter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
-        this.registerReceiver(bluetoothReceiver, filter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            this.registerReceiver(bluetoothReceiver, filter, Context.RECEIVER_EXPORTED);
+        } else {
+            this.registerReceiver(bluetoothReceiver, filter);
+        }
 
 
         //Listener for mew emails if I relay emails and requested to listen for
@@ -1645,7 +1656,11 @@ public class RadioMSG extends AppCompatActivity {
                 filter.setPriority(2147483647); //Max integer value
                 //Debug
                 //Modem.appendToModemBuffer("\n<<<<smsReceiver registered>>>>\n");
-                registerReceiver(smsReceiver, filter);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    registerReceiver(smsReceiver, filter, Context.RECEIVER_EXPORTED);
+                } else {
+                    registerReceiver(smsReceiver, filter);
+                }
                 listeningForSMSs = true;
             } else {
                 RadioMSG.topToastText("Permission to Receive SMS not granted. Go to the device \"Settings/Apps\" and " +
@@ -1855,7 +1870,19 @@ public class RadioMSG extends AppCompatActivity {
 
         // Register for phone state monitoring
         mTelephonyManager = (TelephonyManager) myContext.getSystemService(Context.TELEPHONY_SERVICE);
-        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            mCallStateCallback = new CallStateCallback();
+            mTelephonyManager.registerTelephonyCallback(
+                    myContext.getMainExecutor(), (TelephonyCallback) mCallStateCallback);
+        } else {
+            mPhoneStateListener = new PhoneStateListener() {
+                @Override
+                public void onCallStateChanged(int state, String incomingNumber) {
+                    handleCallStateChange(state);
+                }
+            };
+            mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+        }
 
         // Launch task for time display (Time is GPS time aligned if requested)
         Runnable displayTimeRunnable = new regularActionsRunner();
@@ -2384,7 +2411,7 @@ public class RadioMSG extends AppCompatActivity {
                 final String type = split[0];
 
                 if ("primary".equalsIgnoreCase(type)) {
-                    return Environment.getExternalStorageDirectory() + "/" + split[1];
+                    return Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + split[1];
                 }
 
                 // TODO handle non-primary volumes
@@ -3076,8 +3103,14 @@ public class RadioMSG extends AppCompatActivity {
         if (bluetoothReceiver != null)
             RadioMSG.myInstance.unregisterReceiver(bluetoothReceiver);
         // Stop listening for phone state
-        if (mTelephonyManager != null)
-            mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+        if (mTelephonyManager != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                if (mCallStateCallback != null)
+                    mTelephonyManager.unregisterTelephonyCallback((TelephonyCallback) mCallStateCallback);
+            } else {
+                mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+            }
+        }
         // Stop listening for received SMSes
         if (listeningForSMSs && smsReceiver != null)
             RadioMSG.myInstance.unregisterReceiver(smsReceiver);
@@ -6956,8 +6989,14 @@ public class RadioMSG extends AppCompatActivity {
                         if (bluetoothReceiver != null)
                             RadioMSG.myInstance.unregisterReceiver(bluetoothReceiver);
                         // Stop listening for phone state
-                        if (mTelephonyManager != null)
-                            mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+                        if (mTelephonyManager != null) {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                                if (mCallStateCallback != null)
+                                    mTelephonyManager.unregisterTelephonyCallback((TelephonyCallback) mCallStateCallback);
+                            } else {
+                                mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+                            }
+                        }
                         // Stop listening for received SMSes
                         if (listeningForSMSs && smsReceiver != null)
                             RadioMSG.myInstance.unregisterReceiver(smsReceiver);
@@ -6985,8 +7024,14 @@ public class RadioMSG extends AppCompatActivity {
                     if (bluetoothReceiver != null)
                         RadioMSG.myInstance.unregisterReceiver(bluetoothReceiver);
                     // Stop listening for phone state
-                    if (mTelephonyManager != null)
-                        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+                    if (mTelephonyManager != null) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                            if (mCallStateCallback != null)
+                                mTelephonyManager.unregisterTelephonyCallback((TelephonyCallback) mCallStateCallback);
+                        } else {
+                            mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+                        }
+                    }
                     // Stop listening for received SMSes
                     if (listeningForSMSs && smsReceiver != null)
                         RadioMSG.myInstance.unregisterReceiver(smsReceiver);
