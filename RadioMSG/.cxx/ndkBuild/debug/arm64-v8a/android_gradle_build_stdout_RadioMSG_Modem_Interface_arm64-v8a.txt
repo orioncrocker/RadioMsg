@@ -1,2 +1,0 @@
-[arm64-v8a] Prebuilt       : libc++_shared.so <= <NDK>/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/
-[arm64-v8a] SharedLibrary  : libRadioMSG_Modem_Interface.so
