@@ -58,6 +58,21 @@ public class myPreferences extends AppCompatActivity
 
     public static class PrefsFragment extends PreferenceFragmentCompat {
 
+        private static final String[] EXPERT_ONLY_KEYS = {
+            "modelistPS", "userInterfacePS", "relayPS",
+            "bluetoothPS", "ackPS", "experimentalPS",
+            "AFREQUENCY", "PRETONEDURATION", "TUNEDURATION",
+            "SLOWCPU", "IDLEMODEMOFF", "SAMPLEAUDIOASFLOATS",
+            "rsidPS", "mt63PS", "RELAYLIST"
+        };
+
+        private void applyExpertModeGating(boolean expertMode) {
+            for (String key : EXPERT_ONLY_KEYS) {
+                Preference pref = findPreference(key);
+                if (pref != null) pref.setEnabled(expertMode);
+            }
+        }
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.preferences, rootKey);
@@ -66,15 +81,7 @@ public class myPreferences extends AppCompatActivity
             // where android:dependency cannot cross PreferenceScreen boundaries.
             boolean expertMode = getPreferenceManager().getSharedPreferences()
                     .getBoolean("EXPERTMODE", false);
-            String[] expertOnlyKeys = {
-                "AFREQUENCY", "PRETONEDURATION", "TUNEDURATION",
-                "SLOWCPU", "IDLEMODEMOFF", "SAMPLEAUDIOASFLOATS",
-                "rsidPS", "mt63PS", "RELAYLIST"
-            };
-            for (String key : expertOnlyKeys) {
-                Preference pref = findPreference(key);
-                if (pref != null) pref.setEnabled(expertMode);
-            }
+            applyExpertModeGating(expertMode);
 
             // Set HF and UHF mode list entries from the modem's available modes
             String[] frequencyClass = {"HF", "UHF"};
@@ -105,6 +112,9 @@ public class myPreferences extends AppCompatActivity
 
             RadioMSG.splistener = new SharedPreferences.OnSharedPreferenceChangeListener() {
                 public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+                    if (key.equals("EXPERTMODE")) {
+                        applyExpertModeGating(prefs.getBoolean("EXPERTMODE", false));
+                    }
                     if (key.equals("AFREQUENCY") || key.equals("SLOWCPU") ||
                             key.equals("RSID_ERRORS") || key.equals("RSIDWIDESEARCH")) {
                         RadioMSG.RXParamsChanged = true;

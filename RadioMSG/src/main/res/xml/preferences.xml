@@ -20,7 +20,6 @@
     </PreferenceScreen>
 
     <PreferenceScreen
-        android:dependency="EXPERTMODE"
         android:key="modelistPS"
         android:title="MODES">
         <ListPreference
@@ -175,7 +174,6 @@
     </PreferenceScreen>
 
     <PreferenceScreen
-        android:dependency="EXPERTMODE"
         android:key="userInterfacePS"
         android:title="USER INTERFACE">
         <PreferenceScreen
@@ -487,7 +485,6 @@
         </PreferenceCategory>
     </PreferenceScreen>
     <PreferenceScreen
-        android:dependency="EXPERTMODE"
         android:key="relayPS"
         android:title="RELAYING">
         <CheckBoxPreference
@@ -604,7 +601,6 @@
             android:summary="Default is 587"/>
     </PreferenceScreen>
     <PreferenceScreen
-        android:dependency="EXPERTMODE"
         android:key="bluetoothPS"
         android:title="BLUETOOTH">
         <CheckBoxPreference
@@ -618,7 +614,6 @@
             android:title="Name of Bluetooth Device for Audio" />
     </PreferenceScreen>
     <PreferenceScreen
-        android:dependency="EXPERTMODE"
         android:key="ackPS"
         android:title="MESSAGE ACKNOWLEDGMENT">
         <CheckBoxPreference
@@ -656,7 +651,6 @@
             android:title="Only Acknowledge Alert Messages" />
     </PreferenceScreen>
     <PreferenceScreen
-        android:dependency="EXPERTMODE"
         android:key="experimentalPS"
         android:title="EXPERIMENTAL">
         <CheckBoxPreference

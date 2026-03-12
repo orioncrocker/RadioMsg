@@ -354,7 +354,9 @@ public class Modem {
             //Add a row to the bitmap
             int ii = 0;
             for (int i = 0; i < picWidth; i++) {
+                if (pixelNumber >= picBuffer.length) break;
                 ii = i * 3; //3 bytes per pixel
+                if (ii + 2 >= data.length) break;
                 picBuffer[pixelNumber++] = 0xff000000 | (data[ii] << 16) | (data[ii + 1] << 8) | data[ii + 2];
             }
             //Create bitmap
@@ -1283,7 +1285,7 @@ public class Modem {
                                                         //RadioMSG.msgDisplayList.addNewItem(txedMessage, true); //Is my own message
                                                         RMsgDisplayItem lastMEssage = RadioMSG.msgDisplayList.getDisplayListItem(RadioMSG.msgDisplayList.getCount() - 1);
                                                         long deltaTime = System.currentTimeMillis() - RMsgProcessor.lastMessageEndTxTime;
-                                                        if (lastMEssage.myOwn && (deltaTime < 13000)) { //less than 10 seconds since end of TX
+                                                        if (lastMEssage != null && lastMEssage.myOwn && (deltaTime < 13000)) { //less than 10 seconds since end of TX
                                                             //Display it
                                                             appendToModemBuffer("\n*** Message Received *** ");
                                                             RadioMSG.middleToastText("*** Message Received ***");

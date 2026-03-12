@@ -1526,6 +1526,7 @@ public class RadioMSG extends AppCompatActivity {
                     if (intentExtras != null) {
                         //Start a new thread as it may be long running and by default the onReceive runs on the UI thread
                         final Object[] smses = (Object[]) intentExtras.get("pdus");
+                        if (smses == null || smses.length == 0) return;
                         //Debug
                         //Modem.appendToModemBuffer("\n<<<<Received " + smses.length + " SMS(s)>>>>\n");
                         Thread myThread = new Thread() {
@@ -1686,7 +1687,8 @@ public class RadioMSG extends AppCompatActivity {
                         if (config.getPreferenceB("USEGPSTIME", false) &&
                                 (refTimeSource.equals("") || refTimeSource.equals("GPS"))) {
                             String[] NmeaArray = nmea.split(",");
-                            if (NmeaArray[0].equals("$GPGGA") || NmeaArray[0].equals("$GNRMC")) {
+                            if (NmeaArray.length > 1 &&
+                                    (NmeaArray[0].equals("$GPGGA") || NmeaArray[0].equals("$GNRMC"))) {
                                 //debug
                                 //Processor.APRSwindow += "\n NMEA is :"+nmea;
                                 //AndPskmail.mHandler.post(AndPskmail.addtoAPRS);
@@ -1747,7 +1749,8 @@ public class RadioMSG extends AppCompatActivity {
                         if (config.getPreferenceB("USEGPSTIME", false) &&
                                 (refTimeSource.equals("") || refTimeSource.equals("GPS"))) {
                             String[] NmeaArray = nmea.split(",");
-                            if (NmeaArray[0].equals("$GPGGA") || NmeaArray[0].equals("$GNRMC")) {
+                            if (NmeaArray.length > 1 &&
+                                    (NmeaArray[0].equals("$GPGGA") || NmeaArray[0].equals("$GNRMC"))) {
                                 //debug
                                 //Processor.APRSwindow += "\n NMEA is :"+nmea;
                                 //RadioMsg.mHandler.post(AndPskmail.addtoAPRS);
@@ -2204,8 +2207,9 @@ public class RadioMSG extends AppCompatActivity {
                     chan.setLightColor(Color.BLUE);
                     chan.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
                     NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                    assert manager != null;
-                    manager.createNotificationChannel(chan);
+                    if (manager != null) {
+                        manager.createNotificationChannel(chan);
+                    }
                     chanId = chan.getId();
                 }
                 mBuilder = new NotificationCompat.Builder(this, chanId)
