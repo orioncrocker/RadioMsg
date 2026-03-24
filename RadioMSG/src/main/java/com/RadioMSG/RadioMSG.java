@@ -1093,6 +1093,11 @@ public class RadioMSG extends AppCompatActivity {
         // Init config
         mysp = PreferenceManager.getDefaultSharedPreferences(this);
 
+        // Start file logging if enabled
+        if (mysp.getBoolean("LOGTOFILE", false)) {
+            LogcatLogger.start(this);
+        }
+
         //Initialize location manager for gps fixes
         locationManager = (LocationManager) this
                 .getSystemService(Context.LOCATION_SERVICE);

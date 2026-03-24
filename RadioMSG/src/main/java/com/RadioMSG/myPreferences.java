@@ -104,6 +104,7 @@ public class myPreferences extends AppCompatActivity
                     quickMsgPref.setSummary(quickMsgPref.getText());
                 }
             }
+
         }
 
         @Override
@@ -114,6 +115,13 @@ public class myPreferences extends AppCompatActivity
                 public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
                     if (key.equals("EXPERTMODE")) {
                         applyExpertModeGating(prefs.getBoolean("EXPERTMODE", false));
+                    }
+                    if (key.equals("LOGTOFILE")) {
+                        if (prefs.getBoolean("LOGTOFILE", false)) {
+                            LogcatLogger.start(requireContext());
+                        } else {
+                            LogcatLogger.stop();
+                        }
                     }
                     if (key.equals("AFREQUENCY") || key.equals("SLOWCPU") ||
                             key.equals("RSID_ERRORS") || key.equals("RSIDWIDESEARCH")) {

@@ -651,6 +651,15 @@
             android:title="Only Acknowledge Alert Messages" />
     </PreferenceScreen>
     <PreferenceScreen
+        android:key="diagnosticsPS"
+        android:title="DIAGNOSTICS">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="LOGTOFILE"
+            android:title="Log to File"
+            android:summary="Continuously writes app logs to Android/data/com.RadioMSG/files/" />
+    </PreferenceScreen>
+    <PreferenceScreen
         android:key="experimentalPS"
         android:title="EXPERIMENTAL">
         <CheckBoxPreference
