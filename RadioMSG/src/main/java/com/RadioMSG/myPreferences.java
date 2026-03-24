@@ -111,6 +111,10 @@ public class myPreferences extends AppCompatActivity
         public void onResume() {
             super.onResume();
 
+            // Unregister previous listener to prevent accumulation
+            if (RadioMSG.splistener != null) {
+                RadioMSG.mysp.unregisterOnSharedPreferenceChangeListener(RadioMSG.splistener);
+            }
             RadioMSG.splistener = new SharedPreferences.OnSharedPreferenceChangeListener() {
                 public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
                     if (key.equals("EXPERTMODE")) {

@@ -163,28 +163,29 @@ public class WaveWriter {
     private void writeWaveHeader() throws IOException {
         // rewind to beginning of the file
         RandomAccessFile file = new RandomAccessFile(this.mOutFile, "rw");
-        file.seek(0);
+        try {
+            file.seek(0);
 
-        int bytesPerSec = (mSampleBits + 7) / 8;
+            int bytesPerSec = (mSampleBits + 7) / 8;
 
-        file.writeBytes("RIFF"); // WAV chunk header
-        file.writeInt(Integer.reverseBytes(mBytesWritten + 36)); // WAV chunk size
-        file.writeBytes("WAVE"); // WAV format
+            file.writeBytes("RIFF"); // WAV chunk header
+            file.writeInt(Integer.reverseBytes(mBytesWritten + 36)); // WAV chunk size
+            file.writeBytes("WAVE"); // WAV format
 
-        file.writeBytes("fmt "); // format subchunk header
-        file.writeInt(Integer.reverseBytes(16)); // format subchunk size
-        file.writeShort(Short.reverseBytes((short) 1)); // audio format
-        file.writeShort(Short.reverseBytes((short) mChannels)); // number of channels
-        file.writeInt(Integer.reverseBytes(mSampleRate)); // sample rate
-        file.writeInt(Integer.reverseBytes(mSampleRate * mChannels * bytesPerSec)); // byte rate
-        file.writeShort(Short.reverseBytes((short) (mChannels * bytesPerSec))); // block align
-        file.writeShort(Short.reverseBytes((short) mSampleBits)); // bits per sample
+            file.writeBytes("fmt "); // format subchunk header
+            file.writeInt(Integer.reverseBytes(16)); // format subchunk size
+            file.writeShort(Short.reverseBytes((short) 1)); // audio format
+            file.writeShort(Short.reverseBytes((short) mChannels)); // number of channels
+            file.writeInt(Integer.reverseBytes(mSampleRate)); // sample rate
+            file.writeInt(Integer.reverseBytes(mSampleRate * mChannels * bytesPerSec)); // byte rate
+            file.writeShort(Short.reverseBytes((short) (mChannels * bytesPerSec))); // block align
+            file.writeShort(Short.reverseBytes((short) mSampleBits)); // bits per sample
 
-        file.writeBytes("data"); // data subchunk header
-        file.writeInt(Integer.reverseBytes(mBytesWritten)); // data subchunk size
-
-        file.close();
-        file = null;
+            file.writeBytes("data"); // data subchunk header
+            file.writeInt(Integer.reverseBytes(mBytesWritten)); // data subchunk size
+        } finally {
+            file.close();
+        }
     }
 
     private static void writeUnsignedShortLE(BufferedOutputStream stream, short sample)

@@ -535,14 +535,13 @@ public class RadioMSG extends AppCompatActivity {
     // Create runnable for posting to terminal window
     public static final Runnable addtoterminal = new Runnable() {
         public void run() {
-            // myTV.setText(RMsgProcessor.TermWindow);
+            // Always drain TermWindow to prevent unbounded growth
+            // even when the terminal view is not visible
+            TerminalBuffer += RMsgProcessor.TermWindow;
+            RMsgProcessor.TermWindow = "";
+            if (TerminalBuffer.length() > 10000)
+                TerminalBuffer = TerminalBuffer.substring(2000);
             if (myTermTV != null) {
-                //Update done with setText below
-                //myTermTV.append(RMsgProcessor.TermWindow);
-                TerminalBuffer += RMsgProcessor.TermWindow;
-                RMsgProcessor.TermWindow = "";
-                if (TerminalBuffer.length() > 10000)
-                    TerminalBuffer = TerminalBuffer.substring(2000);
                 myTermTV.setText(TerminalBuffer);
                 // Then scroll to the bottom
                 if (myTermSC != null) {
