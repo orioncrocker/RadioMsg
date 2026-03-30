@@ -178,6 +178,7 @@ public class RadioMSG extends AppCompatActivity {
 
     //Are we in a Voide dialog popup dialog?
     private static boolean voiceDialogOpened = false;
+    private AlertDialog mExitDialog;
 
     private static String savedSmsMessage = "";
 
@@ -2298,6 +2299,9 @@ public class RadioMSG extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if (mExitDialog != null && mExitDialog.isShowing()) {
+            mExitDialog.dismiss();
+        }
         //Release activity instance
         //myInstance = null;
     }
@@ -3062,7 +3066,7 @@ public class RadioMSG extends AppCompatActivity {
                         dialog.cancel();
                     }
                 });
-                myAlertDialog.show();
+                mExitDialog = myAlertDialog.show();
                 break;
             case R.id.About:
                 displayAbout();
