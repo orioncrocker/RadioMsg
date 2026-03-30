@@ -437,9 +437,7 @@ public class Modem {
         RMsgProcessor.lastMessageEndRxTime = 0L;
         //Reset timeout flag
         RMsgProcessor.pictureRxInTime = false;
-        RadioMSG.progressCount = "";
-        RMsgProcessor.status = RadioMSG.myContext.getString(R.string.txt_Listening);//"Listening";
-        RadioMSG.mHandler.post(RadioMSG.updatetitle);
+        setStatusListening();
         receivingPic = false;
         //Reset image manipulation
         shiftValue = 0;
@@ -1538,6 +1536,16 @@ public class Modem {
         editor.commit();
     }
 
+    private static void setStatus(int stringResId) {
+        RMsgProcessor.status = RadioMSG.myContext.getString(stringResId);
+        RadioMSG.progressCount = "";
+        RadioMSG.mHandler.post(RadioMSG.updatetitle);
+    }
+
+    public static void setStatusListening()   { setStatus(R.string.txt_Listening); }
+    public static void setStatusSending()     { setStatus(R.string.txt_Sending); }
+    public static void setStatusSendingPic()  { setStatus(R.string.txt_SendingPic); }
+
     //Appends received string to modem buffer
     public static void appendToModemBuffer(String rxedCharacters) {
         synchronized(RadioMSG.modemBufferlock) {
@@ -1711,8 +1719,7 @@ public class Modem {
             //priorityCModems = priorityCCIR476 = false;
             priorityCModems = true;
             if (!RMsgProcessor.status.equals(RadioMSG.myContext.getString(R.string.txt_Listening))) {
-                RMsgProcessor.status = RadioMSG.myContext.getString(R.string.txt_Listening);
-                RadioMSG.mHandler.post(RadioMSG.updatetitle);
+                setStatusListening();
             }
         }
         /*
@@ -1722,9 +1729,8 @@ public class Modem {
         if (lastRsidTime + 35000 < System.currentTimeMillis()
                 && !receivingMsg && !receivedSOH && !RMsgProcessor.TXActive) {
             //Reset status to listening
-            if (!RMsgProcessor.status.equals("Listening")) {
-                RMsgProcessor.status = "Listening";
-                RadioMSG.mHandler.post(RadioMSG.updatetitle);
+            if (!RMsgProcessor.status.equals(RadioMSG.myContext.getString(R.string.txt_Listening))) {
+                setStatusListening();
             }
         }
         */
@@ -1744,8 +1750,7 @@ public class Modem {
         RMsgProcessor.FileNameString = "";
         receivingMsg = false;
         receivedSOH = false;
-        RMsgProcessor.status = RadioMSG.myContext.getString(R.string.txt_Listening);//"Listening";
-        RadioMSG.mHandler.post(RadioMSG.updatetitle);
+        setStatusListening();
         priorityCModems = true;
         priorityCCIR476 = false;
         BlockBuffer = new StringBuilder(5000);
@@ -1995,8 +2000,7 @@ public class Modem {
             //Set flags to TXing
             RMsgProcessor.TXActive = true;
             resetTxProgressPercent();
-            RMsgProcessor.status = RadioMSG.myContext.getString(R.string.txt_Sending); //"Sending";
-            RadioMSG.mHandler.post(RadioMSG.updatetitle);
+            setStatusSending();
 
             //Wait for the receiving side to be fully stopped???
             //To-Do: review logic here: while (modemState != RXMODEMPAUSED) {
@@ -2217,8 +2221,7 @@ public class Modem {
                                 //RMsgUtil.addEntryToLog(RMsgUtil.dateTimeStamp() + "Done 'changeCModem' with modem # " + modemCode);
                                 if (myMessage.picture.getWidth() > 0 &&
                                         myMessage.picture.getHeight() > 0) {
-                                    RMsgProcessor.status = RadioMSG.myContext.getString(R.string.txt_SendingPic); //"Sending Pic";
-                                    RadioMSG.mHandler.post(RadioMSG.updatetitle);
+                                    setStatusSendingPic();
                                     //
                                     txInit(frequency);
                                     //debugging only
@@ -2357,10 +2360,7 @@ public class Modem {
                 setSpeakerOn(10000L); //10 seconds delay. Speaker off processed in RadioMsg.regularActions().
             }
             //Update title
-            RMsgProcessor.status = RadioMSG.myContext.getString(R.string.txt_Listening);//"Listening";
-            //VK2ETA added to clear progress info during a tune
-            RadioMSG.progressCount = "";
-            RadioMSG.mHandler.post(RadioMSG.updatetitle);
+            setStatusListening();
         }
     }
     
