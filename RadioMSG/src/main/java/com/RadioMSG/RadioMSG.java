@@ -5311,7 +5311,7 @@ public class RadioMSG extends AppCompatActivity {
                                 RMsgTxList.addMessageToList(toStr, mMessage.relay, intext,
                                         false, null, 0,
                                         null);
-                                myView.setText("");
+                                ((EditText) myView).getText().clear();
                                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                             }
@@ -5407,7 +5407,7 @@ public class RadioMSG extends AppCompatActivity {
                     RMsgTxList.addMessageToList(RadioMSG.selectedTo, RadioMSG.selectedVia, intext,
                             false, null, 0,
                             null);
-                    myView.setText("");
+                    ((EditText) myView).getText().clear();
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 }
@@ -5427,7 +5427,7 @@ public class RadioMSG extends AppCompatActivity {
                 } else if (RMsgProcessor.matchMyCallWith(selectedTo, false) || RMsgProcessor.matchMyCallWith(selectedVia, false)) {
                     middleToastText("CAN'T Request Re-Send from \"YOURSELF\"\n\nSelect another TO destination above");
                 } else {
-                    myView.setText("");
+                    ((EditText) myView).getText().clear();
                     //Remove TO is there is via data as we never relay *qtc? messages
                     // RMsgTxList.addMessageToList(selectedTo, selectedVia, "*qtc?" + " " + intext,
                     String toStr = selectedVia.equals("") ? selectedTo : "*";
@@ -5602,7 +5602,7 @@ public class RadioMSG extends AppCompatActivity {
                 TextView myView = (TextView) findViewById(R.id.edit_text_out);
                 String smsMessage = myView.getText().toString();
                 //Clear text now
-                myView.setText("");
+                ((EditText) myView).getText().clear();
                 RMsgUtil.sendPosition(smsMessage);
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
@@ -5662,7 +5662,7 @@ public class RadioMSG extends AppCompatActivity {
                     RMsgTxList.addMessageToList (RadioMSG.selectedTo, "", intext,
                             false, null, 0,
                             null);
-                    myView.setText("");
+                    ((EditText) myView).getText().clear();
                 }
             }
         });
@@ -5825,7 +5825,7 @@ public class RadioMSG extends AppCompatActivity {
         TextView myView = (TextView) findViewById(R.id.edit_text_out);
         String lastSmsMessage = myView.getText().toString();
         //Clear text now
-        myView.setText("");
+        ((EditText) myView).getText().clear();
         if (lastSmsMessage.trim().length() != 0) {
             msgText += " (" + lastSmsMessage + ")";
         }
@@ -6136,7 +6136,7 @@ public class RadioMSG extends AppCompatActivity {
                     TextView myView = (TextView) findViewById(R.id.edit_text_out);
                     String lastSmsMessage = myView.getText().toString();
                     //Clear text now
-                    myView.setText("");
+                    ((EditText) myView).getText().clear();
                     //Send position as well?
                     CheckBox myCheckbox = (CheckBox) findViewById(R.id.sendgpspos);
                     //Scrambling mode
