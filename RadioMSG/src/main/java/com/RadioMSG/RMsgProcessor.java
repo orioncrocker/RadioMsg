@@ -486,13 +486,17 @@ public class RMsgProcessor extends Service {
             msg.setContent(multipart);
             // Create an SMTP transport from the session
             SMTPTransport t = (SMTPTransport) session.getTransport("smtp");
-            // Connect to the server using credentials
-            t.connect(smtpServer, userName, password);
-            // Send the message
-            t.sendMessage(msg, msg.getAllRecipients());
-            //System.out.println("RMsgUtil sent OK.");
-            //Done upstrem now
-            //updateEmailFilter(mMessage.to, mMessage.from);
+            try {
+                // Connect to the server using credentials
+                t.connect(smtpServer, userName, password);
+                // Send the message
+                t.sendMessage(msg, msg.getAllRecipients());
+                //System.out.println("RMsgUtil sent OK.");
+                //Done upstrem now
+                //updateEmailFilter(mMessage.to, mMessage.from);
+            } finally {
+                try { t.close(); } catch (Exception ignored) {}
+            }
         } catch (Exception ex) {
             RadioMSG.middleToastText("Error relaying message as Email: " + ex.toString());
             //Save in log for debugging
