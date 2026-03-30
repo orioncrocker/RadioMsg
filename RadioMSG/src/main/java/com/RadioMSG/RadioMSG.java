@@ -2340,7 +2340,7 @@ public class RadioMSG extends AppCompatActivity {
                 return;
             }
 
-            if (usbSerialPort == null || (usbSerialPort != null && !usbSerialPort.isOpen())) {
+            if (usbSerialPort == null || !usbSerialPort.isOpen()) {
                 usbSerialPort = driver.getPorts().get(0); // Most devices have just one usbSerialPort (usbSerialPort 0)
                 try {
                     usbSerialPort.open(connection);
@@ -2349,8 +2349,12 @@ public class RadioMSG extends AppCompatActivity {
                     //Same for DTR
                     middleToastText("USB Serial Initialised.");
                 } catch (IOException e) {
+                    connection.close();
                     middleToastText("Error at USB serial init: " + e);
                 }
+            } else {
+                // Port already open; close the connection we just opened to avoid leaking it
+                connection.close();
             }
         }
     }

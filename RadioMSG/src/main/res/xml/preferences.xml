@@ -460,7 +460,7 @@
             android:title="Use GPS time when available"
             android:summary="Prevents time drift when outside cellular networks" />
         <PreferenceCategory
-            android:key="modemgeneralCAT"
+            android:key="gpsTrackingCAT"
             android:title="General Settings">
             <EditTextPreference
                 android:defaultValue="2"

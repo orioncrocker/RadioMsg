@@ -955,23 +955,25 @@ public class Modem {
         }
         int ii = 20; //number of 1/4 seconds wait
         while (--ii > 0) {
+            AudioRecord candidate;
             if (RadioMSG.toBluetooth) {
                 //Bluetooth hack (use voice call)
-                rxAudioRecorder = new AudioRecord(AudioSource.MIC, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
+                candidate = new AudioRecord(AudioSource.MIC, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
                         myAudioFormat, rxBufferSize);
             } else {
                 //Choose input from preferences
                 int audioSource = config.getPreferenceI("AUDIOINPUT", 0);
                 try {
-                    rxAudioRecorder = new AudioRecord(audioSource, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
+                    candidate = new AudioRecord(audioSource, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
                             myAudioFormat, rxBufferSize);
                 } catch (IllegalArgumentException e) {
                     RadioMSG.middleToastText("Modem Audio Source not available. Trying 'Default'");
-                    rxAudioRecorder = new AudioRecord(AudioSource.DEFAULT, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
+                    candidate = new AudioRecord(AudioSource.DEFAULT, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
                             myAudioFormat, rxBufferSize);
                 }
             }
-            if (rxAudioRecorder.getState() == AudioRecord.STATE_INITIALIZED) {
+            if (candidate.getState() == AudioRecord.STATE_INITIALIZED) {
+                rxAudioRecorder = candidate;
                 ii = 0;//ok done
 
                 //Prepare to send Radio Rx audio to speaker.
@@ -1004,6 +1006,7 @@ public class Modem {
                     mySpeakerId = 2; //Default
                 }
             } else {
+                candidate.release(); // release failed instance before retrying
                 if (ii < 16) { //Only if have to wait more than 1 seconds
                     loggingclass.writelog("Waiting for Audio MIC availability...", null, true);
                 }
@@ -1907,11 +1910,13 @@ public class Modem {
         while (--ii > 0) {
             //Choose input from preferences
             int audioSource = config.getPreferenceI("AUDIOINPUT", 0);
-            rxAudioRecorder = new AudioRecord(audioSource, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
+            AudioRecord candidate = new AudioRecord(audioSource, 8000, android.media.AudioFormat.CHANNEL_IN_MONO,
                     myAudioFormat, rxBufferSize);
-            if (rxAudioRecorder.getState() == AudioRecord.STATE_INITIALIZED) {
+            if (candidate.getState() == AudioRecord.STATE_INITIALIZED) {
+                rxAudioRecorder = candidate;
                 ii = 0;//ok done
             } else {
+                candidate.release(); // release failed instance before retrying
                 if (ii < 16) { //Only if have to wait more than 1 seconds
                     loggingclass.writelog("Waiting for Audio MIC availability...", null, true);
                 }
