@@ -2189,7 +2189,11 @@ public class RadioMSG extends AppCompatActivity {
             RMsgProcessor.RxModem = RMsgProcessor.TxModem = Modem.
                     customModeListInt[Modem.getModeIndex(RMsgProcessor.RxModem)];
 
-            startService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            } else {
+                startService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            }
             ProcessorON = true;
 
             // Finally, if we were on the modem screen AND we come back to it,
@@ -2243,7 +2247,11 @@ public class RadioMSG extends AppCompatActivity {
                 // small RAM devices
                 //System.gc();
                 //Start service
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            } else {
                 startService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            }
                 ProcessorON = true;
             }
         }
@@ -3946,7 +3954,11 @@ public class RadioMSG extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-            startService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            } else {
+                startService(new Intent(RadioMSG.this, RMsgProcessor.class));
+            }
             ProcessorON = true;
         }
     }
@@ -6555,8 +6567,11 @@ public class RadioMSG extends AppCompatActivity {
                             // Force garbage collection to prevent Out Of Memory
                             // errors on small RAM devices
                             //System.gc();
-                            startService(new Intent(RadioMSG.this,
-                                    RMsgProcessor.class));
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                startForegroundService(new Intent(RadioMSG.this, RMsgProcessor.class));
+                            } else {
+                                startService(new Intent(RadioMSG.this, RMsgProcessor.class));
+                            }
                             ProcessorON = true;
                             // Set modem text as NOT selectable (Only for Android 3.0 and UP)
                             TextView myTempModemTV = (TextView) findViewById(R.id.modemview);
