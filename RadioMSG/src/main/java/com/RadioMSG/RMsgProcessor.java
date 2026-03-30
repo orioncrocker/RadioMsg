@@ -65,7 +65,7 @@ import androidx.core.content.ContextCompat;
 public class RMsgProcessor extends Service {
 
     static String application = "RadioMSG 2.3.0.3";
-    static String version = "Version 2.3.0.3, 2025-04-10";
+    static String version = "v.0.1.2026_03_29";
 
     static boolean onWindows = true;
     static String ModemPreamble = "";  // String to send before any Tx Buffer
