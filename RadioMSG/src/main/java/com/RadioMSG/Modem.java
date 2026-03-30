@@ -1866,7 +1866,7 @@ public class Modem {
     private static void txSoundInInit() {
 
         //Open and initialise the Output towards the Radio
-        txBufferSize = 4 * android.media.AudioTrack.getMinBufferSize(8000,
+        txBufferSize = 8 * android.media.AudioTrack.getMinBufferSize(8000,
                 AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT); //Android check the multiplier value for the buffer size
         if (RadioMSG.toBluetooth) {
             txAudioTrack = new AudioTrack(AudioManager.STREAM_VOICE_CALL, 8000, AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT, txBufferSize, AudioTrack.MODE_STREAM);
